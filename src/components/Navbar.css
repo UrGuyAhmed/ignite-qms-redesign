@@ -1,0 +1,183 @@
+/* --- Navbar Base & Dark Theme --- */
+.navbar { 
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
+  z-index: 50; 
+  background-color: #2D3748; /* Dark charcoal background */
+  transition: background-color var(--transition-speed), box-shadow var(--transition-speed); 
+}
+
+.navbar.scrolled { 
+  background-color: #1A202C; /* Slightly darker charcoal on scroll */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3); 
+}
+
+.navbar__container { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 2rem; 
+  height: 5rem; 
+}
+
+/* --- Logo Styling --- */
+.navbar__logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-text-stack {
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+}
+
+/* --- Nav Links (White Text) --- */
+.nav__list { 
+  display: flex; 
+  list-style: none; 
+  gap: 2.5rem; 
+}
+
+.nav__link { 
+  text-decoration: none; 
+  color: var(--white); 
+  font-weight: 500; 
+  font-size: 0.95rem;
+  transition: color var(--transition-speed); 
+}
+
+.nav__link:hover { 
+  color: var(--ignite-orange); 
+}
+
+.navbar__actions { 
+  display: flex; 
+  align-items: center; 
+  gap: 1.5rem; 
+}
+
+/* Increased specificity to override the global index.css charcoal colors */
+.navbar .btn.navbar-btn-secondary {
+  color: var(--white);
+  border: 1px solid var(--white);
+  background-color: transparent;
+}
+
+.navbar .btn.navbar-btn-secondary:hover {
+  background-color: var(--white);
+  color: var(--charcoal); /* Text turns dark when hovering over the white background */
+}
+
+/* --- Mobile Burger Icon (White) --- */
+.burger-btn { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 5px; 
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+}
+
+.burger-btn span { 
+  display: block; 
+  width: 25px; 
+  height: 2px; 
+  background-color: var(--white); 
+}
+
+/* --- Mobile Drawer Mechanics --- */
+.mobile-drawer { 
+  position: fixed; 
+  top: 0; 
+  right: 0; 
+  width: 100%; 
+  height: 100vh; 
+  z-index: 100; 
+  pointer-events: none; 
+}
+
+.mobile-drawer.open { 
+  pointer-events: auto; 
+}
+
+.drawer-overlay { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0, 0, 0, 0.5); 
+  opacity: 0; 
+  transition: opacity var(--transition-speed); 
+}
+
+.mobile-drawer.open .drawer-overlay { 
+  opacity: 1; 
+}
+
+.mobile-drawer__content { 
+  position: absolute; 
+  top: 0; 
+  right: 0; 
+  width: 80%; 
+  max-width: 400px; 
+  height: 100%; 
+  background-color: var(--white); 
+  padding: 2rem; 
+  display: flex; 
+  flex-direction: column; 
+  transform: translateX(100%); 
+  transition: transform var(--transition-speed); 
+  z-index: 101; 
+}
+
+.mobile-drawer.open .mobile-drawer__content { 
+  transform: translateX(0); 
+}
+
+/* --- Drawer Internals --- */
+.close-btn { 
+  align-self: flex-end; 
+  background: none; 
+  border: none; 
+  font-size: 2rem; 
+  cursor: pointer; 
+  color: var(--charcoal); 
+}
+
+.mobile-drawer__nav { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 1.5rem; 
+  margin-bottom: auto; 
+}
+
+.mobile__link { 
+  text-decoration: none; 
+  color: var(--charcoal); 
+  font-size: 1.25rem; 
+  font-weight: 600; 
+}
+
+.mobile-drawer__contact { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 1rem; 
+  border-top: 1px solid #e2e8f0; 
+  padding-top: 2rem; 
+}
+
+.contact-link { 
+  text-decoration: none; 
+  color: var(--charcoal); 
+  font-weight: 500; 
+}

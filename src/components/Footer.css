@@ -1,0 +1,105 @@
+.footer {
+  background-color: #F4F5F8; /* Light grey-blue background to match the form design */
+  border-top: 1px solid #e2e8f0;
+  padding-top: 4rem;
+  color: var(--charcoal);
+  margin-top: auto;
+}
+
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr; /* 3-column layout where the form is slightly wider */
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer__title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
+.footer__subtitle { font-size: 1.125rem; font-weight: 600; margin-bottom: 1.25rem; }
+.footer__desc { font-size: 0.95rem; line-height: 1.6; color: #4a5568; margin-bottom: 1.5rem; }
+
+.footer__contact-info p { margin-bottom: 0.75rem; font-size: 0.95rem; }
+.footer__contact-info a { color: var(--ignite-orange); text-decoration: none; font-weight: 600; }
+
+.footer__links { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+.footer__links a { color: #4a5568; text-decoration: none; font-weight: 500; transition: color var(--transition-speed); }
+.footer__links a:hover { color: var(--ignite-orange); }
+
+/* --- Integrated Demo Form Styles --- */
+.footer__demo-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1A202C;
+  margin-bottom: 1.25rem;
+}
+
+.demo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.demo-input,
+.demo-textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid #FF6A00; /* IgniteQMS Orange border */
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #1A202C;
+  background-color: #FFFFFF;
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+
+.demo-input:focus,
+.demo-textarea:focus {
+  box-shadow: 0 0 0 2px rgba(255, 106, 0, 0.2);
+}
+
+.demo-input::placeholder,
+.demo-textarea::placeholder {
+  color: #1A202C;
+  font-weight: 500;
+}
+
+.demo-textarea {
+  resize: vertical;
+}
+
+.demo-submit-btn {
+  align-self: flex-start;
+  background-color: #FFFFFF;
+  color: #1A202C;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.demo-submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer__bottom {
+  border-top: 1px solid #e2e8f0;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #718096;
+}
+
+@media (max-width: 768px) {
+  .footer__container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}

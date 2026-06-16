@@ -1,0 +1,79 @@
+.faq-section { 
+    padding: 5rem 2rem;
+    background-color: var(--light-grey);
+}
+.faq-container {
+    max-width: 900px; 
+    margin: 0 auto; 
+}
+.faq-title { 
+    text-align: center; 
+    font-size: 2.25rem; 
+    font-weight: 800; 
+    color: var(--charcoal); 
+    margin-bottom: 3rem; 
+}
+.faq-card { 
+    background: var(--white); 
+    border-radius: 12px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+    padding: 2rem 3rem; 
+}
+.faq-item { 
+    border-bottom: 1px solid #edf2f7; 
+}
+.faq-item:last-of-type { border-bottom: none; }
+.faq-question { 
+    width: 100%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background: none; 
+    border: none; 
+    padding: 1.5rem 0; 
+    font-size: 1.1rem; 
+    font-weight: 600; 
+    color: var(--charcoal); 
+    cursor: pointer; 
+    text-align: left; 
+}
+.faq-question:hover, .faq-question.active { color: var(--ignite-orange); }
+.faq-icon { 
+    font-size: 1.5rem; 
+    font-weight: 400; 
+}
+.faq-answer { max-height: 0; 
+    overflow: hidden; 
+    transition: max-height 0.3s ease; 
+}
+.faq-answer.open { max-height: 200px; }
+.faq-answer p { 
+    padding-bottom: 1.5rem; 
+    color: #4a5568; 
+    line-height: 1.6; 
+}
+.faq-footer { 
+    text-align: center; 
+    margin-top: 2rem; 
+    padding-top: 2rem; 
+    border-top: 1px solid #edf2f7; 
+}
+.faq-contact-btn { 
+    border-color: var(--charcoal); 
+    color: var(--charcoal); 
+}
+/* Add this to the bottom of src/components/FAQ.css */
+
+.faq-answer.open { 
+  max-height: 300px; /* Increased slightly to make room for the button */ 
+}
+
+.faq-video-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.5rem;
+}
+@media (max-width: 768px) { .faq-card { padding: 1.5rem; } }

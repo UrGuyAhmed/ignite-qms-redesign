@@ -1,0 +1,31 @@
+.page-wrapper { display: flex; flex-direction: column; min-height: 100vh; }
+.contact-main { flex: 1; padding: 8rem 2rem 5rem; background-color: var(--light-grey); }
+.contact-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+
+/* Left Column */
+.contact-title { font-size: 2.5rem; font-weight: 800; color: var(--charcoal); margin-bottom: 1rem; }
+.contact-subtitle { color: #4a5568; line-height: 1.6; margin-bottom: 3rem; }
+.contact-image-placeholder { height: 250px; background: #e2e8f0; border-radius: 8px; margin-bottom: 3rem; display: flex; align-items: center; justify-content: center; }
+.quick-support h3 { font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--charcoal); }
+.quick-support p { color: #718096; font-size: 0.95rem; margin-bottom: 1.5rem; }
+.support-cards { display: flex; gap: 1rem; }
+.support-card { flex: 1; display: flex; align-items: center; gap: 1rem; background: var(--white); padding: 1.25rem; border-radius: 8px; text-decoration: none; color: var(--charcoal); box-shadow: 0 4px 6px rgba(0,0,0,0.02); transition: transform 0.2s; border: 1px solid #edf2f7; }
+.support-card:hover { transform: translateY(-2px); border-color: var(--ignite-orange); }
+.support-card strong { display: block; font-size: 0.9rem; }
+.support-card span { font-size: 0.85rem; color: var(--ignite-orange); font-weight: 600; }
+.icon { font-size: 1.5rem; }
+
+/* Right Column Form */
+.form-card { background: var(--white); padding: 2.5rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.form-group { margin-bottom: 1.25rem; }
+.form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.5rem; }
+.req { color: #e53e3e; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.75rem 1rem; border: 1px solid #cbd5e0; border-radius: 6px; font-family: inherit; font-size: 0.95rem; transition: border-color 0.2s; outline: none; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--ignite-orange); }
+.form-actions { display: flex; gap: 1rem; margin-top: 2rem; }
+
+@media (max-width: 992px) {
+  .contact-container { grid-template-columns: 1fr; gap: 3rem; }
+  .support-cards { flex-direction: column; }
+}
