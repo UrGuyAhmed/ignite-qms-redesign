@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Clients from './components/Clients';
+import Clients from './components/Solution';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
-import ContactPage from './pages/ContactPage'; // Import the new page
+import ContactPage from './pages/ContactPage';
+import Materiel from './components/Materiel';
 
 // This component acts as your landing page
 const Home = () => (
@@ -12,6 +13,7 @@ const Home = () => (
     <Navbar />
     <main style={{ flex: 1, marginTop: '5rem' }}>
       <Clients />
+      <Materiel/>
       <FAQ /> {/* Inserted exactly between Clients and Footer */}
     </main>
     <Footer />

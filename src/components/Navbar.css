@@ -1,25 +1,32 @@
-/* --- Navbar Base & Dark Theme --- */
+/* --- Color Palette & Variables --- */
+:root {
+  --primary-orange: #FF7F11;
+  --primary-red: #F53D31;
+  --primary-dark: #0E0D1F;
+  --primary-white: #FFFFFF;
+  --transition-speed: 0.3s;
+}
+
+/* --- Navbar Base --- */
 .navbar { 
   position: fixed; 
   top: 0; 
   width: 100%; 
   z-index: 50; 
-  background-color: #2D3748; /* Dark charcoal background */
-  transition: background-color var(--transition-speed), box-shadow var(--transition-speed); 
+  background-color: var(--primary-dark); /* Solid dark background */
+  transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease; 
 }
 
 .navbar.scrolled { 
-  background-color: #1A202C; /* Slightly darker charcoal on scroll */
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3); 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Subtle drop shadow on scroll */
 }
 
 .navbar__container { 
   display: flex; 
   justify-content: space-between; 
   align-items: center; 
-  max-width: 1200px; 
-  margin: 0 auto; 
-  padding: 0 2rem; 
+  max-width: 100%; /* Spreads across the screen */
+  padding: 0 4rem; /* Breathing room from the edges */
   height: 5rem; 
 }
 
@@ -28,56 +35,138 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex: 1; /* Pushes the center nav to the true middle */
 }
 
-.logo-text-stack {
-  display: flex;
-  flex-direction: column;
-  color: var(--white);
-  font-weight: 700;
-  font-size: 1.1rem;
-  line-height: 1.1;
-  letter-spacing: 0.05em;
-}
-
-/* --- Nav Links (White Text) --- */
+/* --- Nav Links --- */
 .nav__list { 
   display: flex; 
   list-style: none; 
-  gap: 2.5rem; 
-}
-
-.nav__link { 
-  text-decoration: none; 
-  color: var(--white); 
-  font-weight: 500; 
-  font-size: 0.95rem;
-  transition: color var(--transition-speed); 
-}
-
-.nav__link:hover { 
-  color: var(--ignite-orange); 
-}
-
-.navbar__actions { 
-  display: flex; 
-  align-items: center; 
   gap: 1.5rem; 
 }
 
-/* Increased specificity to override the global index.css charcoal colors */
+/* Text is white to contrast with the dark background */
+.nav__link { 
+  text-decoration: none; 
+  color: var(--primary-white); 
+  font-weight: 500; 
+  font-size: 0.95rem;
+  transition: color var(--transition-speed) ease; 
+}
+
+.nav__link:hover { 
+  color: var(--primary-orange); 
+}
+
+/* --- Actions Section --- */
+.navbar__actions { 
+  display: flex; 
+  align-items: center; 
+  justify-content: flex-end; /* Pushes buttons to the right edge */
+  gap: 1.5rem; 
+  flex: 1; /* Pushes the center nav to the true middle */
+}
+
+/* --- Secondary Button (White Outline) --- */
 .navbar .btn.navbar-btn-secondary {
-  color: var(--white);
-  border: 1px solid var(--white);
+  color: var(--primary-white);
+  border: 1px solid var(--primary-white);
   background-color: transparent;
+  transition: all var(--transition-speed) ease;
 }
 
 .navbar .btn.navbar-btn-secondary:hover {
-  background-color: var(--white);
-  color: var(--charcoal); /* Text turns dark when hovering over the white background */
+  background-color: var(--primary-white);
+  color: var(--primary-dark); 
 }
 
-/* --- Mobile Burger Icon (White) --- */
+/* --- Primary Button --- */
+.navbar .btn.btn--primary {
+  background-color: var(--primary-orange);
+  color: var(--primary-white);
+  border: 1px solid var(--primary-orange);
+  transition: all var(--transition-speed) ease;
+}
+
+.navbar .btn.btn--primary:hover {
+  background-color: var(--primary-red);
+  border-color: var(--primary-red);
+}
+
+/* --- Language Dropdown --- */
+.navbar__lang-dropdown {
+  position: relative;
+  margin-left: 1rem; 
+  margin-right: 0.5rem;
+}
+
+.lang-toggle {
+  background: none;
+  border: none;
+  color: var(--primary-white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem;
+  transition: color var(--transition-speed) ease;
+}
+
+.flag-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.lang-toggle .arrow {
+  font-size: 0.6rem;
+  color: inherit;
+  opacity: 0.7;
+  transition: transform 0.2s ease;
+}
+
+/* Dropdown Menu List (Dark Theme to match Navbar) */
+.lang-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+  border-radius: 0.5rem;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  min-width: 90px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); 
+  display: flex;
+  flex-direction: column;
+}
+
+.lang-menu li {
+  width: 100%;
+}
+
+.lang-menu button {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0.6rem 1rem;
+  color: var(--primary-white);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.lang-menu button:hover {
+  background-color: rgba(255, 255, 255, 0.05); /* Slight light overlay on hover */
+  color: var(--primary-orange);
+}
+
+/* --- Mobile Burger Icon --- */
 .burger-btn { 
   display: flex; 
   flex-direction: column; 
@@ -91,7 +180,8 @@
   display: block; 
   width: 25px; 
   height: 2px; 
-  background-color: var(--white); 
+  background-color: var(--primary-white); 
+  transition: background-color var(--transition-speed) ease;
 }
 
 /* --- Mobile Drawer Mechanics --- */
@@ -115,15 +205,16 @@
   left: 0; 
   width: 100%; 
   height: 100%; 
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(14, 13, 31, 0.6); 
   opacity: 0; 
-  transition: opacity var(--transition-speed); 
+  transition: opacity var(--transition-speed) ease; 
 }
 
 .mobile-drawer.open .drawer-overlay { 
   opacity: 1; 
 }
 
+/* Keep the drawer itself white for readability */
 .mobile-drawer__content { 
   position: absolute; 
   top: 0; 
@@ -131,12 +222,12 @@
   width: 80%; 
   max-width: 400px; 
   height: 100%; 
-  background-color: var(--white); 
+  background-color: var(--primary-white); 
   padding: 2rem; 
   display: flex; 
   flex-direction: column; 
   transform: translateX(100%); 
-  transition: transform var(--transition-speed); 
+  transition: transform var(--transition-speed) ease; 
   z-index: 101; 
 }
 
@@ -151,7 +242,12 @@
   border: none; 
   font-size: 2rem; 
   cursor: pointer; 
-  color: var(--charcoal); 
+  color: var(--primary-dark); 
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: var(--primary-orange);
 }
 
 .mobile-drawer__nav { 
@@ -163,21 +259,60 @@
 
 .mobile__link { 
   text-decoration: none; 
-  color: var(--charcoal); 
+  color: var(--primary-dark); 
   font-size: 1.25rem; 
   font-weight: 600; 
+  transition: color 0.2s ease;
+}
+
+.mobile__link:hover {
+  color: var(--primary-orange);
+}
+
+/* Mobile Language Flags Row */
+.mobile-drawer__lang {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.mobile-drawer__lang .lang-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem; 
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  padding: 0;
+}
+
+.mobile-drawer__lang .lang-btn:hover,
+.mobile-drawer__lang .lang-btn.active {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.mobile-drawer__lang .lang-separator {
+  color: rgba(14, 13, 31, 0.3); 
+  user-select: none;
 }
 
 .mobile-drawer__contact { 
   display: flex; 
   flex-direction: column; 
   gap: 1rem; 
-  border-top: 1px solid #e2e8f0; 
+  border-top: 1px solid rgba(14, 13, 31, 0.1); 
   padding-top: 2rem; 
 }
 
 .contact-link { 
   text-decoration: none; 
-  color: var(--charcoal); 
+  color: var(--primary-dark); 
   font-weight: 500; 
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: var(--primary-orange);
 }

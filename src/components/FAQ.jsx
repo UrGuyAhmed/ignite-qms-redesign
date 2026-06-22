@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './FAQ.css';
 
-// Added the new "Comment ça marche ?" item with video properties
+// Import your local video file
+import explainerVideo from '../assets/Video/explainerVideo.MP4';
+
 const faqs = [
   {
     question: "Comment ça marche ?",
     answer: "Découvrez notre système en action ! Nous avons préparé une courte vidéo explicative qui vous montre exactement comment Ignite QMS transforme la gestion de vos files d'attente, de l'arrivée du client jusqu'à son service.",
     hasVideo: true,
-    videoLink: "https://www.youtube.com/watch?v=votre-lien-ici" // Replace this with your actual video URL
+    videoSrc: explainerVideo 
   },
   {
     question: "Qu'est-ce qu'un système de gestion de file d'attente ?",
@@ -24,6 +26,58 @@ const faqs = [
   }
 ];
 
+// --- New Sub-Component to handle Video Playback/Pause ---
+const FAQVideoPlayer = ({ src, isOpen }) => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    // Automatically pause the video if the user closes the FAQ tab
+    if (!isOpen && videoRef.current) {
+      videoRef.current.pause();
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    // Setup an observer to watch when the video leaves the screen
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // If the video is not intersecting (visible on screen), pause it
+          if (!entry.isIntersecting && videoRef.current) {
+            videoRef.current.pause();
+          }
+        });
+      },
+      { threshold: 0.1 } // Triggers when 90% of the video is off-screen
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => {
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <div className="faq-video-wrapper">
+      <video 
+        ref={videoRef}
+        controls 
+        className="faq-video"
+        preload="metadata"
+      >
+        <source src={src} type="video/mp4" />
+        Votre navigateur ne supporte pas la lecture de vidéos.
+      </video>
+    </div>
+  );
+};
+
+// --- Main FAQ Component ---
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(0);
 
@@ -37,35 +91,34 @@ const FAQ = () => {
         <h2 className="faq-title">Foire Aux Questions</h2>
         
         <div className="faq-card">
-          {faqs.map((faq, index) => (
-            <div key={index} className="faq-item">
-              
-              <button 
-                className={`faq-question ${openIndex === index ? 'active' : ''}`} 
-                onClick={() => toggleFAQ(index)}
-              >
-                {faq.question}
-                <span className="faq-icon">{openIndex === index ? '−' : '+'}</span>
-              </button>
-              
-              <div className={`faq-answer ${openIndex === index ? 'open' : ''}`}>
-                <p>{faq.answer}</p>
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+            
+            return (
+              <div key={index} className="faq-item">
                 
-                {/* Conditionally render the video button if this FAQ has a video */}
-                {faq.hasVideo && (
-                  <a 
-                    href={faq.videoLink} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="btn btn--primary faq-video-btn"
-                  >
-                    ▶ Voir la vidéo explicative
-                  </a>
-                )}
-              </div>
+                <button 
+                  className={`faq-question ${isOpen ? 'active' : ''}`} 
+                  onClick={() => toggleFAQ(index)}
+                >
+                  {faq.question}
+                  <span className="faq-icon">{isOpen ? '−' : '+'}</span>
+                </button>
+                
+                <div className={`faq-answer ${isOpen ? 'open' : ''}`}>
+                  <div className="faq-answer-inner">
+                    <p>{faq.answer}</p>
+                    
+                    {/* Render the Video Player Component */}
+                    {faq.hasVideo && (
+                      <FAQVideoPlayer src={faq.videoSrc} isOpen={isOpen} />
+                    )}
+                  </div>
+                </div>
 
-            </div>
-          ))}
+              </div>
+            );
+          })}
 
           <div className="faq-footer">
             <Link to="/contact" className="btn btn--secondary faq-contact-btn">
