@@ -1,0 +1,182 @@
+.analytics-section {
+  padding: 5rem 2rem;
+  background-color: var(--qms-white, #ffffff);
+}
+
+.analytics-grid {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+[dir="rtl"] .analytics-grid {
+  flex-direction: row-reverse;
+}
+
+/* Text Side */
+.analytics-text {
+  flex: 1;
+}
+
+.analytics-text h2 {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Split into 2 columns for the 8 bullets */
+  gap: 1rem;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  font-size: 0.95rem;
+  color: var(--qms-dark, #0E0D1F);
+}
+
+.check-icon {
+  margin-top: 0.2rem;
+  color: var(--qms-orange, #FF7F11);
+  font-size: 1.25rem;
+  margin-inline-end: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Dashboard Visual Side */
+.analytics-visual {
+  flex: 1.2;
+}
+
+.dashboard-mockup {
+  background: #f8f9fa;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Interactive Tabs */
+.dashboard-tabs {
+  display: flex;
+  background: var(--qms-dark, #0E0D1F);
+  padding: 0.5rem 0.5rem 0 0.5rem;
+  overflow-x: auto;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: #a0a0a0;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  border-radius: 6px 6px 0 0;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  color: var(--qms-white, #ffffff);
+}
+
+.tab-btn.active {
+  background: var(--qms-white, #ffffff);
+  color: var(--qms-dark, #0E0D1F);
+}
+
+/* Dashboard Metrics & Charts */
+.dashboard-content {
+  padding: 1.5rem;
+}
+
+.metrics-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.metric-card {
+  flex: 1;
+  background: var(--qms-white, #ffffff);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(14, 13, 31, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.m-label {
+  font-size: 0.75rem;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.m-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--qms-dark, #0E0D1F);
+}
+
+.chart-area {
+  background: var(--qms-white, #ffffff);
+  border-radius: 8px;
+  padding: 1.5rem;
+  height: 200px;
+  box-shadow: 0 2px 10px rgba(14, 13, 31, 0.05);
+  display: flex;
+  align-items: flex-end;
+}
+
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+}
+
+.bar {
+  flex: 1;
+  background: var(--qms-orange, #FF7F11);
+  border-radius: 4px 4px 0 0;
+  transition: height 0.5s ease-in-out, background-color 0.3s;
+}
+
+.bar:nth-child(even) {
+  background: var(--qms-blue, #00ABE7);
+}
+
+/* Simple animation class to show interactivity when tabs change */
+.animate-up .bar { animation: growUp 0.5s ease-out; }
+.animate-down .bar { animation: growDown 0.5s ease-out; }
+
+@keyframes growUp {
+  0% { transform: scaleY(0.5); transform-origin: bottom; }
+  100% { transform: scaleY(1); transform-origin: bottom; }
+}
+
+@keyframes growDown {
+  0% { transform: scaleY(1.2); transform-origin: bottom; }
+  100% { transform: scaleY(1); transform-origin: bottom; }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .analytics-grid, [dir="rtl"] .analytics-grid {
+    flex-direction: column-reverse;
+  }
+  .feature-list {
+    grid-template-columns: 1fr;
+  }
+  .metrics-row {
+    flex-wrap: wrap;
+  }
+}

@@ -26,7 +26,7 @@
 .eyebrow {
   font-size: 0.875rem;
   font-weight: 700;
-  color: #f97316;
+  color: var(--qms-orange, #FF7F11);
   letter-spacing: 1px;
   text-transform: uppercase;
   display: block;
@@ -35,7 +35,7 @@
 
 .display-content h2 {
   font-size: 2.25rem;
-  color: #333333;
+  color: var(--qms-dark, #0E0D1F);
   margin-bottom: 1rem;
   line-height: 1.2;
 }
@@ -59,19 +59,20 @@
   align-items: center;
   margin-bottom: 1rem;
   font-size: 1rem;
-  color: #333;
+  color: var(--qms-dark, #0E0D1F);
 }
 
 .check-icon {
-  color: #f97316;
+  color: var(--qms-orange, #FF7F11);
   font-size: 1.25rem;
   margin-inline-end: 1rem;
   flex-shrink: 0;
 }
 
+/* Updated Button using Variables */
 .btn-primary {
-  background-color: #f97316;
-  color: #fff;
+  background-color: var(--qms-orange, #FF7F11);
+  color: var(--qms-white, #FFFFFF);
   border: none;
   padding: 0.875rem 2rem;
   font-size: 1rem;
@@ -85,19 +86,19 @@
 }
 
 .btn-primary:hover {
-  background-color: #e86305;
+  background-color: var(--qms-red, #F53D31);
 }
 
-/* TV Screen Visual (Left side) */
+/* TV Screen Visual */
 .display-visual {
   flex: 1;
 }
 
 .tv-mockup {
-  background: #2c2c2c; /* TV Bezel */
+  background: var(--qms-dark, #0E0D1F);
   border-radius: 16px;
   padding: 12px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 40px rgba(14, 13, 31, 0.15);
   position: relative;
 }
 
@@ -109,12 +110,12 @@
   transform: translateX(-50%);
   width: 100px;
   height: 6px;
-  background: #2c2c2c;
+  background: var(--qms-dark, #0E0D1F);
   border-radius: 0 0 8px 8px;
 }
 
 .tv-screen {
-  background: #ffffff;
+  background: var(--qms-white, #FFFFFF);
   border-radius: 8px;
   overflow: hidden;
   height: 400px;
@@ -124,8 +125,8 @@
 
 /* TV Inner Layout */
 .tv-header {
-  background: #111827;
-  color: #fff;
+  background: #1a192b; /* Slightly lighter than the dark theme color for contrast */
+  color: var(--qms-white, #FFFFFF);
   display: flex;
   justify-content: space-between;
   padding: 1rem;
@@ -133,7 +134,7 @@
 }
 
 .tv-logo {
-  color: #f97316;
+  color: var(--qms-orange, #FF7F11);
 }
 
 .tv-body {
@@ -167,24 +168,23 @@
 .call-ticket {
   font-size: 5rem;
   font-weight: 800;
-  color: #111827;
+  color: var(--qms-dark, #0E0D1F);
   margin: 1rem 0;
 }
 
-/* Gentle ticket animation specified in specs */
 .animate-pulse {
   animation: gentlePulse 2s infinite;
 }
 
 @keyframes gentlePulse {
-  0% { transform: scale(1); color: #111827; }
-  50% { transform: scale(1.05); color: #f97316; }
-  100% { transform: scale(1); color: #111827; }
+  0% { transform: scale(1); color: var(--qms-dark, #0E0D1F); }
+  50% { transform: scale(1.05); color: var(--qms-orange, #FF7F11); }
+  100% { transform: scale(1); color: var(--qms-dark, #0E0D1F); }
 }
 
 .call-counter-box {
-  background: #f97316;
-  color: #fff;
+  background: var(--qms-orange, #FF7F11);
+  color: var(--qms-white, #FFFFFF);
   padding: 1rem 3rem;
   border-radius: 8px;
   font-size: 1.5rem;
@@ -200,14 +200,14 @@
 
 .history-sidebar {
   flex: 1;
-  background: #ffffff;
+  background: var(--qms-white, #FFFFFF);
   padding: 1rem;
 }
 
 .history-title {
   font-size: 1.25rem;
   font-weight: bold;
-  color: #333;
+  color: var(--qms-dark, #0E0D1F);
   border-bottom: 2px solid #eaeaea;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
@@ -224,8 +224,8 @@
 }
 
 .tv-ticker {
-  background: #f97316;
-  color: #fff;
+  background: var(--qms-orange, #FF7F11);
+  color: var(--qms-white, #FFFFFF);
   padding: 0.5rem;
   font-size: 1.125rem;
   font-weight: 500;
@@ -238,7 +238,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(14, 13, 31, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -247,7 +247,7 @@
 }
 
 .modal-content {
-  background: #fff;
+  background: var(--qms-white, #FFFFFF);
   padding: 2.5rem;
   border-radius: 12px;
   max-width: 500px;
@@ -274,7 +274,7 @@
 .modal-content h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #333;
+  color: var(--qms-dark, #0E0D1F);
 }
 
 .modal-content p {

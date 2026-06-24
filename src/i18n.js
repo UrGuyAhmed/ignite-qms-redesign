@@ -254,6 +254,27 @@ const resources = {
           title: "Une communication claire dans vos espaces d'accueil",
           text: "Vos visiteurs restent informés sans avoir à solliciter votre personnel. L'affichage peut être adapté à votre marque, à la taille de votre écran et à la configuration de votre établissement."
         }
+      },
+      analytics: {
+        eyebrow: "DONNÉES ET PERFORMANCE",
+        title: "Prenez de meilleures décisions grâce à des données concrètes.",
+        desc: "Ignite QMS transforme vos flux visiteurs en informations utiles afin de vous aider à identifier les périodes de forte affluence, optimiser vos équipes et améliorer la qualité de service.",
+        tabs: ["Vue générale", "Services", "Agents", "Guichets", "Temps d'attente", "Historique"],
+        bullets: [
+          "Suivi du nombre de tickets émis",
+          "Analyse des temps d'attente",
+          "Mesure du temps moyen de traitement",
+          "Performances par service",
+          "Performances par agent",
+          "Identification des heures de pointe",
+          "Historique filtrable",
+          "Rapports exportables"
+        ],
+        cta: "Explorer le tableau de bord",
+        modal: {
+          title: "Des indicateurs utiles pour améliorer vos opérations",
+          text: "Visualisez la performance de vos services sur une période donnée, comparez les guichets, identifiez les points de congestion et adaptez vos ressources aux besoins réels de votre établissement."
+        }
       }
     }
   },
@@ -512,6 +533,39 @@ const resources = {
           title: "Clear communication in your reception areas",
           text: "Your visitors stay informed without having to ask your staff. The display can be adapted to your brand, your screen size, and your establishment's configuration."
         }
+      },
+      analytics: {
+        eyebrow: "DATA AND PERFORMANCE",
+        title: "Make better decisions with actionable data.",
+        desc: "Ignite QMS transforms your visitor flows into useful information to help you identify peak periods, optimize your teams, and improve service quality.",
+        tabs: ["Overview", "Services", "Agents", "Counters", "Wait Times", "History"],
+        bullets: [
+          "Track number of issued tickets",
+          "Wait time analysis",
+          "Average processing time measurement",
+          "Performance by service",
+          "Performance by agent",
+          "Peak hour identification",
+          "Filterable history",
+          "Exportable reports"
+        ],
+        cta: "Explore the dashboard",
+        modal: {
+          title: "Useful indicators to improve your operations",
+          text: "Visualize the performance of your services over a given period, compare counters, identify congestion points, and adapt your resources to your establishment's real needs."
+        },
+        "hero": {
+          "eyebrow": "QUEUE MANAGEMENT SYSTEM",
+          "title": "Transform every wait into a seamless and controlled experience.",
+          "subtitle": "Ignite QMS centralizes reception, orientation, visitor calling, and performance analysis into a complete, customizable solution deployed locally in Algeria.",
+          "cta_primary": "Try the demo for free",
+          "cta_secondary": "Request a presentation",
+          "trust_points": [
+            "Customizable solution",
+            "On-site installation",
+            "Software & hardware designed in Algeria"
+          ]
+        }
       }
     }
   },
@@ -769,6 +823,51 @@ const resources = {
         modal: {
           title: "تواصل واضح في مناطق الاستقبال الخاصة بك",
           text: "يبقى زوارك على اطلاع دون الحاجة إلى سؤال موظفيك. يمكن تكييف العرض مع علامتك التجارية وحجم شاشتك وتكوين مؤسستك."
+        }
+      },
+      analytics: {
+        eyebrow: "البيانات والأداء",
+        title: "اتخذ قرارات أفضل بفضل البيانات الملموسة.",
+        desc: "يحول نظام Ignite QMS تدفقات زوارك إلى معلومات مفيدة لمساعدتك في تحديد فترات الذروة وتحسين فرقك وتحسين جودة الخدمة.",
+        tabs: ["نظرة عامة", "الخدمات", "الموظفون", "الشبابيك", "أوقات الانتظار", "السجل"],
+        bullets: [
+          "تتبع عدد التذاكر الصادرة",
+          "تحليل أوقات الانتظار",
+          "قياس متوسط وقت المعالجة",
+          "الأداء حسب الخدمة",
+          "الأداء حسب الموظف",
+          "تحديد ساعات الذروة",
+          "سجل قابل للتصفية",
+          "تقارير قابلة للتصدير"
+        ],
+        cta: "استكشف لوحة القيادة",
+        modal: {
+          title: "مؤشرات مفيدة لتحسين عملياتك",
+          text: "تصور أداء خدماتك خلال فترة زمنية معينة، وقارن بين الشبابيك، وحدد نقاط الازدحام، وقم بتكييف مواردك مع الاحتياجات الحقيقية لمؤسستك."
+        },
+        "hero":{
+          "eyebrow": "SYSTÈME DE GESTION DE FILES D'ATTENTE",
+          "title": "Transformez chaque attente en une expérience fluide et maîtrisée.",
+          "subtitle": "Ignite QMS centralise l'accueil, l'orientation, l'appel des visiteurs et l'analyse de vos performances dans une solution complète, personnalisable et déployée localement en Algérie.",
+          "cta_primary": "Tester la démo gratuitement",
+          "cta_secondary": "Demander une présentation",
+          "trust_points": [
+            "Solution personnalisable",
+            "Installation sur site",
+            "Logiciel et matériel conçus en Algérie"
+          ]
+        },
+        "hero": {
+          "eyebrow": "نظام إدارة طوابير الانتظار",
+          "title": "حوّل كل انتظار إلى تجربة سلسة ومحكمة.",
+          "subtitle": "يقوم نظام Ignite QMS بمركزة الاستقبال والتوجيه واستدعاء الزوار وتحليل أدائك في حل متكامل وقابل للتخصيص يتم نشره محلياً في الجزائر.",
+          "cta_primary": "جرب النسخة التجريبية مجاناً",
+          "cta_secondary": "اطلب عرضاً تقديمياً",
+          "trust_points": [
+            "حل قابل للتخصيص",
+            "تركيب في الموقع",
+            "برامج ومعدات مصممة في الجزائر"
+          ]
         }
       }
     }

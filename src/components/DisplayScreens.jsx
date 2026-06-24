@@ -6,9 +6,10 @@ import './DisplayScreens.css';
 const DisplayScreens = () => {
   const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [ticketNumber, setTicketNumber] = useState(104);
+  const [ticketNumber, setTicketNumber] = useState(160);
 
-  const bullets = t('display_screens.bullets', { returnObjects: true });
+  // Add a fallback array to prevent mapping over undefined during loading
+  const bullets = t('display_screens.bullets', { returnObjects: true }) || [];
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -63,7 +64,7 @@ const DisplayScreens = () => {
                 <div className="tv-body">
                   {/* Active Call (Animated) */}
                   <div className="active-call">
-                    <div className="call-label">Ticket</div>
+                    <div className="call-label">TICKET</div>
                     <div className="call-ticket animate-pulse">A-{ticketNumber}</div>
                     <div className="call-counter-box">
                       <span>Counter</span>
