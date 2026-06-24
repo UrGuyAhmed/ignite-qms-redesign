@@ -1,0 +1,84 @@
+.credibility-section {
+  background-color: #f8f9fa;
+  padding: 60px 20px;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.credibility-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.cred-card {
+  flex: 1;
+  min-width: 220px;
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cred-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.cred-icon {
+  font-size: 2rem;
+  color: #ff6b00; /* Ignite QMS Orange */
+  margin-bottom: 20px;
+}
+
+.cred-title {
+  color: #333333;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cred-desc {
+  color: #666666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Right-To-Left (RTL) Support for Arabic */
+[dir="rtl"] .cred-card {
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+  .credibility-container {
+    gap: 20px;
+  }
+  .cred-card {
+    min-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .cred-card {
+    min-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  
+  [dir="rtl"] .cred-card {
+    align-items: center;
+    text-align: center;
+  }
+}

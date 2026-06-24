@@ -1,0 +1,197 @@
+.advanced-control-section {
+  padding: 5rem 2rem;
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Grid Layout */
+.control-grid {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+/* Make sure the text switches sides in RTL environments (Arabic) */
+[dir="rtl"] .control-grid {
+  flex-direction: row-reverse;
+}
+
+.control-visual {
+  flex: 1;
+}
+
+.image-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f8f9fa;
+  border: 1px solid #eaeaea;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.card-shadow {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.control-content {
+  flex: 1;
+}
+
+.eyebrow {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #f97316; /* IgniteQMS Orange */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.control-content h2 {
+  font-size: 2.25rem;
+  color: #333333; /* Dark Charcoal */
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 1.125rem;
+  color: #555555;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Bullet List */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #333333;
+}
+
+.check-icon {
+  color: #f97316;
+  font-size: 1.25rem;
+  margin-inline-end: 1rem; /* RTL friendly margin */
+  flex-shrink: 0;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #f97316;
+  color: #ffffff;
+  border: none;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #e86305;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #555;
+}
+
+/* Adjust close button for RTL */
+[dir="rtl"] .modal-close {
+  right: auto;
+  left: 1rem;
+}
+
+.modal-content h3 {
+  color: #333333;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  color: #555555;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.modal-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+}
+
+.highlight-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #f97316;
+  border-radius: 50%;
+  margin-inline-end: 0.75rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .control-grid, [dir="rtl"] .control-grid {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .control-content h2 {
+    font-size: 1.75rem;
+  }
+}

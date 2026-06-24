@@ -316,3 +316,6 @@
 .contact-link:hover {
   color: var(--primary-orange);
 }
+html {
+  scroll-behavior: smooth;
+}

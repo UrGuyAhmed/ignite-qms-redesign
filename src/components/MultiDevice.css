@@ -1,0 +1,92 @@
+.multi-device-section {
+  padding: 80px 20px;
+  background-color: #ffffff;
+}
+
+.md-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.md-content {
+  flex: 1;
+}
+
+.md-eyebrow {
+  color: #ff6b00;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.md-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.md-desc {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.md-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+
+.md-bullets li {
+  padding: 10px 0;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.md-bullets li::before {
+  content: "✓";
+  color: #ff6b00;
+  margin-right: 12px;
+  font-weight: bold;
+}
+
+.md-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* This creates the modern visual render box */
+.md-visual img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 992px) {
+  .md-container { flex-direction: column; text-align: center; }
+  .md-bullets { text-align: left; }
+}
+.md-visual-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 15px;
+  align-items: center;
+}
+
+.md-img-kiosk { width: 100%; grid-row: span 2; }
+.md-img-desktop { width: 100%; border-radius: 8px; }
+.md-img-mobile { width: 60%; margin-left: auto; border-radius: 8px; }

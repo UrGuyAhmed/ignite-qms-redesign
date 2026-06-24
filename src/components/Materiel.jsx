@@ -1,7 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './Materiel.css';
 
-const materialImages = import.meta.glob('../assets/materiel/*.{png,jpg,jpeg,svg,webp}', { eager: true, as: 'url' });
+// FIXED LINE: Updated to the new Vite glob syntax
+const materialImages = import.meta.glob('../assets/materiel/*.{png,jpg,jpeg,svg,webp}', { eager: true, query: '?url', import: 'default' });
 
 const CheckIcon = () => (
   <svg className="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
@@ -9,123 +11,122 @@ const CheckIcon = () => (
   </svg>
 );
 
-const materialDetails = {
-  // --- The 4 Unique Kiosk Configurations ---
-  'Kiosk 1': {
-    badge: 'MODÈLE CLASSIQUE',
-    title: 'Borne Autonome Standard',
-    desc: 'La solution idéale pour l\'accueil de vos visiteurs offrant un équilibre parfait entre performance et encombrement.',
-    features: [
-      'Écran tactile interactif 15 pouces',
-      'Imprimante thermique ultra-rapide intégrée',
-      'Châssis en acier sécurisé anti-vandalisme',
-      'Connexion réseau Wi-Fi ou Ethernet'
-    ]
-  },
-  'Kiosk 2': {
-    badge: 'MODÈLE COMPACT',
-    title: 'Borne Murale Discrète',
-    desc: 'Optimisez l\'espace de votre zone d\'accueil avec ce modèle mural conçu pour les environnements plus étroits.',
-    features: [
-      'Fixation murale sécurisée et robuste',
-      'Faible encombrement au sol',
-      'Installation rapide et accès facilité',
-      'Idéal pour les couloirs ou petits halls'
-    ]
-  },
-  'Kiosk 3': {
-    badge: 'HAUT DE GAMME',
-    title: 'Kiosque Premium Grand Écran',
-    desc: 'Offrez une visibilité maximale et une expérience luxueuse avec ce modèle doté d\'un affichage étendu.',
-    features: [
-      'Écran large 22 pouces Full HD',
-      'Lecteur de carte RFID et NFC intégré',
-      'Design ergonomique et finitions premium',
-      'Affichage ultra-lumineux'
-    ]
-  },
-  'Kiosk 4': {
-    badge: 'ACCESSIBILITÉ',
-    title: 'Borne Adaptée (PMR)',
-    desc: 'Garantissez un accès équitable pour tous avec notre borne spécialement pensée pour les personnes à mobilité réduite.',
-    features: [
-      'Hauteur de l\'écran et de l\'imprimante ajustée',
-      'Interface avec assistance sonore',
-      'Inclinaison adaptée pour les fauteuils roulants',
-      'Respect total des normes d\'accessibilité'
-    ]
-  },
-  'Kiosk': { // Generic fallback just in case you have a file named exactly "Kiosk.png"
-    badge: 'BORNE INTERACTIVE',
-    title: 'Kiosques Self-Service',
-    desc: 'Offrez une expérience fluide dès l\'arrivée avec nos bornes interactives multi-fonctions.',
-    features: [
-      'Impression de tickets rapide',
-      'Collecte de données client sans erreur',
-      'Système d\'exploitation sécurisé',
-      'Design personnalisable à vos couleurs'
-    ]
-  },
-
-  // --- The Rest of Your Hardware ---
-  'Ecran': {
-    badge: 'AFFICHAGE DYNAMIQUE',
-    title: 'Écrans Principaux',
-    desc: 'Gardez vos clients informés et engagés pendant leur temps d\'attente.',
-    features: [
-      'Haute définition (HD/4K)',
-      'Affichage clair des numéros appelés',
-      'Support multimédia (Vidéos, Images)',
-      'Mise à jour en temps réel'
-    ]
-  },
-  'Guichet': {
-    badge: 'POSTE DE TRAVAIL',
-    title: 'Afficheurs de Guichet',
-    desc: 'Indique clairement le numéro du ticket appelé au-dessus de chaque poste de travail.',
-    features: [
-      'Visibilité optimale',
-      'Synchronisation immédiate',
-      'Installation facile',
-      'Design discret'
-    ]
-  },
-  'Ticket': {
-    badge: 'CONSOMMABLE',
-    title: 'Rouleaux de Tickets',
-    desc: 'Tickets de haute qualité pour une impression claire et nette avec notre solution QMS.',
-    features: [
-      'Papier thermique premium',
-      'Lisibilité garantie',
-      'Changement de rouleau facile',
-      'Personnalisable'
-    ]
-  },
-  'Modification': {
-    badge: 'CONFIGURATION',
-    title: 'Module de Modification',
-    desc: 'Adaptez rapidement votre matériel selon les besoins de votre espace d\'accueil.',
-    features: [
-      'Ajustement ergonomique',
-      'Composants modulables',
-      'Entretien facilité',
-      'Longue durée de vie'
-    ]
-  },
-  'default': {
-    badge: 'ÉQUIPEMENT QMS',
-    title: 'Matériel Performant',
-    desc: 'Une architecture matérielle conçue pour s\'intégrer parfaitement à notre logiciel Ignite QMS.',
-    features: [
-      'Fiabilité à toute épreuve',
-      'Maintenance simplifiée',
-      'Support technique dédié',
-      'Intégration Plug & Play'
-    ]
-  }
-};
-
 const Materiel = () => {
+  const { t } = useTranslation();
+
+  const materialDetails = {
+    'Kiosk 1': {
+      badge: t('materiel.kiosk1.badge'),
+      title: t('materiel.kiosk1.title'),
+      desc: t('materiel.kiosk1.desc'),
+      features: [
+        t('materiel.kiosk1.f1'),
+        t('materiel.kiosk1.f2'),
+        t('materiel.kiosk1.f3'),
+        t('materiel.kiosk1.f4')
+      ]
+    },
+    'Kiosk 2': {
+      badge: t('materiel.kiosk2.badge'),
+      title: t('materiel.kiosk2.title'),
+      desc: t('materiel.kiosk2.desc'),
+      features: [
+        t('materiel.kiosk2.f1'),
+        t('materiel.kiosk2.f2'),
+        t('materiel.kiosk2.f3'),
+        t('materiel.kiosk2.f4')
+      ]
+    },
+    'Kiosk 3': {
+      badge: t('materiel.kiosk3.badge'),
+      title: t('materiel.kiosk3.title'),
+      desc: t('materiel.kiosk3.desc'),
+      features: [
+        t('materiel.kiosk3.f1'),
+        t('materiel.kiosk3.f2'),
+        t('materiel.kiosk3.f3'),
+        t('materiel.kiosk3.f4')
+      ]
+    },
+    'Kiosk 4': {
+      badge: t('materiel.kiosk4.badge'),
+      title: t('materiel.kiosk4.title'),
+      desc: t('materiel.kiosk4.desc'),
+      features: [
+        t('materiel.kiosk4.f1'),
+        t('materiel.kiosk4.f2'),
+        t('materiel.kiosk4.f3'),
+        t('materiel.kiosk4.f4')
+      ]
+    },
+    'Kiosk': { 
+      badge: t('materiel.kiosk.badge'),
+      title: t('materiel.kiosk.title'),
+      desc: t('materiel.kiosk.desc'),
+      features: [
+        t('materiel.kiosk.f1'),
+        t('materiel.kiosk.f2'),
+        t('materiel.kiosk.f3'),
+        t('materiel.kiosk.f4')
+      ]
+    },
+    'Ecran': {
+      badge: t('materiel.ecran.badge'),
+      title: t('materiel.ecran.title'),
+      desc: t('materiel.ecran.desc'),
+      features: [
+        t('materiel.ecran.f1'),
+        t('materiel.ecran.f2'),
+        t('materiel.ecran.f3'),
+        t('materiel.ecran.f4')
+      ]
+    },
+    'Guichet': {
+      badge: t('materiel.guichet.badge'),
+      title: t('materiel.guichet.title'),
+      desc: t('materiel.guichet.desc'),
+      features: [
+        t('materiel.guichet.f1'),
+        t('materiel.guichet.f2'),
+        t('materiel.guichet.f3'),
+        t('materiel.guichet.f4')
+      ]
+    },
+    'TicketMockup': {
+      badge: t('materiel.ticket.badge'),
+      title: t('materiel.ticket.title'),
+      desc: t('materiel.ticket.desc'),
+      features: [
+        t('materiel.ticket.f1'),
+        t('materiel.ticket.f2'),
+        t('materiel.ticket.f3'),
+        t('materiel.ticket.f4')
+      ]
+    },
+    'Modification': {
+      badge: t('materiel.mod.badge'),
+      title: t('materiel.mod.title'),
+      desc: t('materiel.mod.desc'),
+      features: [
+        t('materiel.mod.f1'),
+        t('materiel.mod.f2'),
+        t('materiel.mod.f3'),
+        t('materiel.mod.f4')
+      ]
+    },
+    'default': {
+      badge: t('materiel.def.badge'),
+      title: t('materiel.def.title'),
+      desc: t('materiel.def.desc'),
+      features: [
+        t('materiel.def.f1'),
+        t('materiel.def.f2'),
+        t('materiel.def.f3'),
+        t('materiel.def.f4')
+      ]
+    }
+  };
+
   return (
     <section className="materiel-section" id="materiel">
       <div className="materiel__container">
@@ -135,7 +136,6 @@ const Materiel = () => {
           const safePath = path.toLowerCase();
           let matchedKey = 'default';
 
-          // --- Exact Matching Logic for the Kiosks ---
           if (safePath.includes('kiosk 1')) {
             matchedKey = 'Kiosk 1';
           } else if (safePath.includes('kiosk 2')) {
@@ -150,21 +150,18 @@ const Materiel = () => {
             matchedKey = 'Ecran';
           } else if (safePath.includes('guichet')) {
             matchedKey = 'Guichet';
-          } else if (safePath.includes('ticket')) {
-            matchedKey = 'Ticket';
+          } else if (safePath.includes('ticketmockup')) {
+            matchedKey = 'TicketMockup';
           } else if (safePath.includes('modification')) {
             matchedKey = 'Modification';
           }
 
           const details = materialDetails[matchedKey];
-          
-          // Alternates the layout: even indexes are text-left, odd indexes are text-right
           const isReverse = index % 2 !== 0;
 
           return (
             <div key={index} className={`materiel-row ${isReverse ? 'row-reverse' : ''}`}>
               
-              {/* Text Content Block */}
               <div className="materiel-content">
                 <span className="materiel-badge">{details.badge}</span>
                 <h2 className="materiel-title">{details.title}</h2>
@@ -179,10 +176,9 @@ const Materiel = () => {
                   ))}
                 </ul>
                 
-                <button className="btn btn--primary materiel-btn">En savoir plus</button>
+                <button className="btn btn--primary materiel-btn">{t('materiel.btn_more')}</button>
               </div>
 
-              {/* Image Block */}
               <div className="materiel-image-wrapper">
                 <img src={url} alt={details.title} loading="lazy" />
               </div>

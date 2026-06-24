@@ -1,0 +1,296 @@
+.display-screens-section {
+  padding: 5rem 2rem;
+  background-color: #fafafa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Grid Layout */
+.display-grid {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+[dir="rtl"] .display-grid {
+  flex-direction: row-reverse;
+}
+
+.display-content {
+  flex: 1;
+}
+
+.eyebrow {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #f97316;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.display-content h2 {
+  font-size: 2.25rem;
+  color: #333333;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 1.125rem;
+  color: #555555;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Bullets */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.check-icon {
+  color: #f97316;
+  font-size: 1.25rem;
+  margin-inline-end: 1rem;
+  flex-shrink: 0;
+}
+
+.btn-primary {
+  background-color: #f97316;
+  color: #fff;
+  border: none;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #e86305;
+}
+
+/* TV Screen Visual (Left side) */
+.display-visual {
+  flex: 1;
+}
+
+.tv-mockup {
+  background: #2c2c2c; /* TV Bezel */
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.tv-mockup::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 6px;
+  background: #2c2c2c;
+  border-radius: 0 0 8px 8px;
+}
+
+.tv-screen {
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* TV Inner Layout */
+.tv-header {
+  background: #111827;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  font-weight: bold;
+}
+
+.tv-logo {
+  color: #f97316;
+}
+
+.tv-body {
+  display: flex;
+  flex: 1;
+}
+
+.active-call {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f8f9fa;
+  border-right: 1px solid #eaeaea;
+  padding: 2rem;
+}
+
+[dir="rtl"] .active-call {
+  border-right: none;
+  border-left: 1px solid #eaeaea;
+}
+
+.call-label {
+  font-size: 1.5rem;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.call-ticket {
+  font-size: 5rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 1rem 0;
+}
+
+/* Gentle ticket animation specified in specs */
+.animate-pulse {
+  animation: gentlePulse 2s infinite;
+}
+
+@keyframes gentlePulse {
+  0% { transform: scale(1); color: #111827; }
+  50% { transform: scale(1.05); color: #f97316; }
+  100% { transform: scale(1); color: #111827; }
+}
+
+.call-counter-box {
+  background: #f97316;
+  color: #fff;
+  padding: 1rem 3rem;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.counter-number {
+  font-size: 2rem;
+}
+
+.history-sidebar {
+  flex: 1;
+  background: #ffffff;
+  padding: 1rem;
+}
+
+.history-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 1.125rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.tv-ticker {
+  background: #f97316;
+  color: #fff;
+  padding: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #555;
+}
+
+[dir="rtl"] .modal-close {
+  right: auto;
+  left: 1rem;
+}
+
+.modal-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.modal-content p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .display-grid, [dir="rtl"] .display-grid {
+    flex-direction: column;
+  }
+  .tv-screen {
+    height: 300px;
+  }
+  .call-ticket {
+    font-size: 3rem;
+  }
+}

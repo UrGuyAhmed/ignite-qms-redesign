@@ -1,7 +1,10 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './Footer.css';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="footer" id="contacts">
       <div className="footer__container">
@@ -10,44 +13,45 @@ const Footer = () => {
         <div className="footer__column">
           <h3 className="footer__title">Ignite <span className="highlight">QMS</span></h3>
           <p className="footer__desc">
-            Transformez chaque attente en une expérience fluide et maîtrisée en Algérie.
+            {t('footer.desc')}
           </p>
           <div className="footer__contact-info">
-            <p><strong>Adresse:</strong> Alger, Algérie</p>
-            <p><strong>Téléphone:</strong> <a href="tel:+213770625655">+213 770 625 655</a></p>
-            <p><strong>Email:</strong> <a href="mailto:info@igniteae.com">info@igniteae.com</a></p>
+            <p><strong>{t('footer.address_label')}</strong> {t('footer.address_value')}</p>
+            <p><strong>{t('footer.phone_label')}</strong> <a href="tel:+213770625655">+213 770 625 655</a></p>
+            <p><strong>{t('footer.email_label')}</strong> <a href="mailto:info@igniteae.com">info@igniteae.com</a></p>
           </div>
         </div>
 
         {/* Column 2: Links */}
         <div className="footer__column">
-          <h4 className="footer__subtitle">Liens Rapides</h4>
+          <h4 className="footer__subtitle">{t('footer.quick_links')}</h4>
           <ul className="footer__links">
-            <li><a href="#solution">Solution</a></li>
-            <li><a href="#fonctionnalites">Fonctionnalités</a></li>
-            <li><a href="#materiel">Matériel</a></li>
-            <li><a href="#faq">FAQ</a></li>
+            {/* Reusing the 'nav' keys we already set up! */}
+            <li><a href="#solution">{t('nav.solution')}</a></li>
+            <li><a href="#fonctionnalites">{t('nav.features')}</a></li>
+            <li><a href="#materiel">{t('nav.hardware')}</a></li>
+            <li><a href="#faq">{t('nav.faq')}</a></li>
           </ul>
         </div>
 
         {/* Column 3: Demandez une Démo Form */}
         <div className="footer__column">
-          <h4 className="footer__demo-title">Demandez une Démo</h4>
+          <h4 className="footer__demo-title">{t('footer.demo_title')}</h4>
           
           <form className="demo-form" onSubmit={(e) => e.preventDefault()}>
-            <input type="text" placeholder="Nom et Prénom" className="demo-input" required />
-            <input type="email" placeholder="E-mail" className="demo-input" required />
-            <input type="tel" placeholder="Téléphone" className="demo-input" required />
-            <textarea placeholder="Message" className="demo-textarea" rows="4" required></textarea>
+            <input type="text" placeholder={t('footer.placeholder_name')} className="demo-input" required />
+            <input type="email" placeholder={t('footer.placeholder_email')} className="demo-input" required />
+            <input type="tel" placeholder={t('footer.placeholder_phone')} className="demo-input" required />
+            <textarea placeholder={t('footer.placeholder_message')} className="demo-textarea" rows="4" required></textarea>
             
-            <button type="submit" className="demo-submit-btn">ENVOYER</button>
+            <button type="submit" className="demo-submit-btn">{t('footer.submit_btn')}</button>
           </form>
         </div>
 
       </div>
       
       <div className="footer__bottom">
-        <p>© {new Date().getFullYear()} Ignite QMS. Tous droits réservés.</p>
+        <p>© {new Date().getFullYear()} Ignite QMS. {t('footer.rights')}</p>
       </div>
     </footer>
   );
