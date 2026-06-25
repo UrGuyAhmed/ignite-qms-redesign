@@ -275,6 +275,21 @@ const resources = {
           title: "Des indicateurs utiles pour améliorer vos opérations",
           text: "Visualisez la performance de vos services sur une période donnée, comparez les guichets, identifiez les points de congestion et adaptez vos ressources aux besoins réels de votre établissement."
         }
+      },
+      "customization": {
+        "eyebrow": "VOTRE IDENTITÉ VISUELLE",
+        "title": "Une solution qui s'intègre naturellement à votre établissement.",
+        "desc": "Chaque point de contact peut être personnalisé pour offrir une expérience cohérente avec votre image de marque.",
+        "bullets": [
+          "Logo et couleurs de votre organisation",
+          "Écrans d'accueil personnalisés",
+          "Tickets imprimés selon votre identité",
+          "Messages de bienvenue",
+          "Plusieurs langues",
+          "Annonces vocales configurables",
+          "QR codes et informations additionnelles sur les tickets"
+        ],
+        "cta": "Voir les options de personnalisation"
       }
     }
   },
@@ -566,6 +581,21 @@ const resources = {
             "Software & hardware designed in Algeria"
           ]
         }
+      },
+      "customization": {
+        "eyebrow": "YOUR VISUAL IDENTITY",
+        "title": "A solution that integrates naturally into your establishment.",
+        "desc": "Every touchpoint can be customized to provide a consistent experience with your brand image.",
+        "bullets": [
+          "Your organization's logo and colors",
+          "Custom welcome screens",
+          "Tickets printed with your identity",
+          "Welcome messages",
+          "Multiple languages",
+          "Configurable voice announcements",
+          "QR codes and additional information on tickets"
+        ],
+        "cta": "See customization options"
       }
     }
   },
@@ -869,6 +899,21 @@ const resources = {
             "برامج ومعدات مصممة في الجزائر"
           ]
         }
+      },
+      "customization": {
+        "eyebrow": "هويتك البصرية",
+        "title": "حل يندمج بشكل طبيعي في مؤسستك.",
+        "desc": "يمكن تخصيص كل نقطة اتصال لتقديم تجربة متسقة مع صورة علامتك التجارية.",
+        "bullets": [
+          "شعار وألوان مؤسستك",
+          "شاشات ترحيب مخصصة",
+          "تذاكر مطبوعة بهويتك",
+          "رسائل ترحيب",
+          "لغات متعددة",
+          "إعلانات صوتية قابلة للتكوين",
+          "رموز الاستجابة السريعة ومعلومات إضافية على التذاكر"
+        ],
+        "cta": "اطلع على خيارات التخصيص"
       }
     }
   }

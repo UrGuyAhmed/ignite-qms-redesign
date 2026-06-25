@@ -11,25 +11,22 @@ const AnalyticsDashboard = () => {
   const tabs = t('analytics.tabs', { returnObjects: true }) || [];
   const bullets = t('analytics.bullets', { returnObjects: true }) || [];
 
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
+  const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   return (
-    <section className="analytics-section">
-      <div className="container">
-        <div className="analytics-grid">
-          
-          {/* Left Side: Interactive Dashboard Visual */}
-          <div className="analytics-visual">
-            <div className="dashboard-mockup card-shadow">
-              
-              {/* Interactive Tabs above dashboard */}
-              <div className="dashboard-tabs">
+    <section className="ad-section">
+      <div className="ad-container">
+        <div className="ad-grid">
+
+          {/* Left: Dashboard Visual */}
+          <div className="ad-visual">
+            <div className="ad-mockup">
+
+              <div className="ad-tabs">
                 {tabs.map((tab, index) => (
-                  <button 
+                  <button
                     key={index}
-                    className={`tab-btn ${activeTab === index ? 'active' : ''}`}
+                    className={`ad-tab ${activeTab === index ? 'ad-tab--active' : ''}`}
                     onClick={() => setActiveTab(index)}
                   >
                     {tab}
@@ -37,56 +34,54 @@ const AnalyticsDashboard = () => {
                 ))}
               </div>
 
-              {/* Dashboard Content Area */}
-              <div className="dashboard-content">
-                {/* Header Metrics */}
-                <div className="metrics-row">
-                  <div className="metric-card">
-                    <span className="m-label">Total Tickets</span>
-                    <span className="m-value">1,284</span>
+              <div className="ad-dashboard">
+                <div className="ad-metrics">
+                  <div className="ad-metric">
+                    <span className="ad-metric__label">Total Tickets</span>
+                    <span className="ad-metric__value">1,284</span>
                   </div>
-                  <div className="metric-card">
-                    <span className="m-label">Avg Wait Time</span>
-                    <span className="m-value">12m</span>
+                  <div className="ad-metric">
+                    <span className="ad-metric__label">Avg Wait Time</span>
+                    <span className="ad-metric__value">12m</span>
                   </div>
-                  <div className="metric-card">
-                    <span className="m-label">Service Time</span>
-                    <span className="m-value">8m</span>
+                  <div className="ad-metric">
+                    <span className="ad-metric__label">Service Time</span>
+                    <span className="ad-metric__value">8m</span>
                   </div>
                 </div>
 
-                {/* Animated Charts (Changes slightly based on active tab) */}
-                <div className="chart-area">
-                  <div className={`bar-chart ${activeTab % 2 === 0 ? 'animate-up' : 'animate-down'}`}>
-                    <div className="bar b1" style={{height: '60%'}}></div>
-                    <div className="bar b2" style={{height: '80%'}}></div>
-                    <div className="bar b3" style={{height: '40%'}}></div>
-                    <div className="bar b4" style={{height: '90%'}}></div>
-                    <div className="bar b5" style={{height: '50%'}}></div>
-                    <div className="bar b6" style={{height: '75%'}}></div>
+                <div className="ad-chart-area">
+                  <div className={`ad-bar-chart ${activeTab % 2 === 0 ? 'ad-anim-up' : 'ad-anim-down'}`}>
+                    <div className="ad-bar" style={{ height: '60%' }} />
+                    <div className="ad-bar" style={{ height: '80%' }} />
+                    <div className="ad-bar" style={{ height: '40%' }} />
+                    <div className="ad-bar" style={{ height: '90%' }} />
+                    <div className="ad-bar" style={{ height: '50%' }} />
+                    <div className="ad-bar" style={{ height: '75%' }} />
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
 
-          {/* Right Side: Text Content */}
-          <div className="analytics-text">
-            <span className="eyebrow">{t('analytics.eyebrow')}</span>
-            <h2>{t('analytics.title')}</h2>
-            <p className="description">{t('analytics.desc')}</p>
-            
-            <ul className="feature-list">
+          {/* Right: Text Content */}
+          <div className="ad-content">
+            <span className="ad-eyebrow">{t('analytics.eyebrow')}</span>
+            <h2 className="ad-title">{t('analytics.title')}</h2>
+            <p className="ad-desc">{t('analytics.desc')}</p>
+
+            <ul className="ad-bullets">
               {bullets.map((bullet, index) => (
-                <li key={index}>
-                  <FiCheckCircle className="check-icon" />
+                <li key={index} className="ad-bullet-item">
+                  <FiCheckCircle className="ad-check-icon" />
                   <span>{bullet}</span>
                 </li>
               ))}
             </ul>
 
-            <button className="btn-primary" onClick={toggleModal}>
-              <FiBarChart2 className="btn-icon" />
+            <button className="ad-btn" onClick={toggleModal}>
+              <FiBarChart2 />
               {t('analytics.cta')}
             </button>
           </div>
@@ -94,13 +89,10 @@ const AnalyticsDashboard = () => {
         </div>
       </div>
 
-      {/* Details Modal */}
       {isModalOpen && (
-        <div className="modal-overlay" onClick={toggleModal}>
-          <div className="modal-content card-shadow" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={toggleModal}>
-              <FiX />
-            </button>
+        <div className="ad-modal-overlay" onClick={toggleModal}>
+          <div className="ad-modal" onClick={(e) => e.stopPropagation()}>
+            <button className="ad-modal-close" onClick={toggleModal}><FiX /></button>
             <h3>{t('analytics.modal.title')}</h3>
             <p>{t('analytics.modal.text')}</p>
           </div>
