@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
-import Clients from './components/Solution'; // <-- This acts as Hero + Clients + Credibility
+import Clients from './components/Solution'; 
 import Showcase from './components/Showcase'; 
 import HowItWorks from './components/HowItWorks';
 import MultiDevice from './components/MultiDevice';
@@ -20,18 +20,43 @@ const Home = () => (
     <Navbar />
     
     <main style={{ flex: 1 }}> 
-      <Clients />  
-      <Showcase />
+      {/* 1. Solution */}
+      <section id="solution">
+        <Clients />  
+      </section>
 
-      <HowItWorks />
-      <MultiDevice />
-      <AdvancedControl />
+      {/* 2. Features (Fonctionnalités) */}
+      <section id="fonctionnalites">
+        <HowItWorks />
+        <MultiDevice />
+        <AdvancedControl />
+      </section>
 
-      <DisplayScreens />
+      {/* 3. Hardware (Matériel) */}
+      <section id="materiel">
+        <DisplayScreens />
+      </section>
+
+      {/* 4. Sectors (Secteurs) */}
+      <section id="secteurs">
+        {/* <SectorsComponent /> */}
+        <Showcase />
+      </section>
       
-      <AnalyticsDashboard />
-      <Customization /> 
-      <FAQ /> 
+      {/* 5. References */}
+      <section id="references">
+        <AnalyticsDashboard />
+      </section>
+
+      {/* 6. Resources (Ressources) */}
+      <section id="ressources">
+        <Customization /> 
+      </section>
+
+      {/* 7. FAQ */}
+      <section id="faq">
+        <FAQ /> 
+      </section>
     </main>
     
     <FloatingActions />

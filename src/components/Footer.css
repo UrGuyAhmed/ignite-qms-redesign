@@ -103,3 +103,22 @@
     gap: 2.5rem;
   }
 }
+
+.footer__socials {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.footer__socials a {
+  color: #1A202C; 
+  font-size: 1.5rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.footer__socials a:hover {
+  color: #FF6A00; 
+  transform: translateY(-2px); 
+}

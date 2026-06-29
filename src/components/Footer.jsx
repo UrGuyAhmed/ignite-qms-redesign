@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { FaLinkedin, FaFacebook, FaInstagram } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -20,13 +21,25 @@ const Footer = () => {
             <p><strong>{t('footer.phone_label')}</strong> <a href="tel:+213770625655">+213 770 625 655</a></p>
             <p><strong>{t('footer.email_label')}</strong> <a href="mailto:info@igniteae.com">info@igniteae.com</a></p>
           </div>
+          
+          {/* Social Media Links Added Here */}
+          <div className="footer__socials">
+            <a href="https://www.linkedin.com/company/68615549" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <FaLinkedin />
+            </a>
+            <a href="https://www.facebook.com/ignitedxb" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <FaFacebook />
+            </a>
+            <a href="https://www.instagram.com/ignitedxb" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <FaInstagram />
+            </a>
+          </div>
         </div>
 
         {/* Column 2: Links */}
         <div className="footer__column">
           <h4 className="footer__subtitle">{t('footer.quick_links')}</h4>
           <ul className="footer__links">
-            {/* Reusing the 'nav' keys we already set up! */}
             <li><a href="#solution">{t('nav.solution')}</a></li>
             <li><a href="#fonctionnalites">{t('nav.features')}</a></li>
             <li><a href="#materiel">{t('nav.hardware')}</a></li>
