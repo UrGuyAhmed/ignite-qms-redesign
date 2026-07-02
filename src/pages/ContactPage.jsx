@@ -28,14 +28,14 @@ const ContactPage = () => {
               <p>Contactez-nous instantanément via l'une des méthodes suivantes.</p>
               
               <div className="support-cards">
-                <a href="https://wa.me/213770625655" className="support-card">
+                <a href="https://wa.me/213000000000" className="support-card">
                   <span className="icon whatsapp-icon">💬</span>
                   <div>
                     <strong>WhatsApp</strong>
                     <span>+213 770 625 655</span>
                   </div>
                 </a>
-                <a href="tel:+213770625655" className="support-card">
+                <a href="tel:+213000000000" className="support-card">
                   <span className="icon phone-icon">📞</span>
                   <div>
                     <strong>Téléphone</strong>

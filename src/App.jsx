@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import Clients from './components/Solution'; 
@@ -14,6 +14,32 @@ import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import ContactPage from './pages/ContactPage';
 import FloatingActions from './components/FloatingActions';
+import PageLoader from './components/PageLoader'; // <-- 1. Import your new loader
+
+// 2. Add the Transition Wrapper
+const PageTransitionWrapper = ({ children }) => {
+  const location = useLocation();
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    // Show the video overlay when the route changes
+    setIsLoading(true);
+
+    // Hide it after 1 second (1000ms). Adjust this to match your video length!
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, [location.pathname]);
+
+  return (
+    <>
+      {isLoading && <PageLoader />}
+      {children}
+    </>
+  );
+};
 
 const Home = () => (
   <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', paddingBottom: '70px' }}>
@@ -39,7 +65,6 @@ const Home = () => (
 
       {/* 4. Sectors (Secteurs) */}
       <section id="secteurs">
-        {/* <SectorsComponent /> */}
         <Showcase />
       </section>
       
@@ -67,10 +92,13 @@ const Home = () => (
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<ContactPage />} />
-      </Routes>
+      {/* 3. Wrap your Routes inside the Transition Wrapper */}
+      <PageTransitionWrapper>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </PageTransitionWrapper>
     </Router>
   );
 }
