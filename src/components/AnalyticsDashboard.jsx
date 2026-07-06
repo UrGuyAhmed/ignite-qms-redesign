@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FiBarChart2, FiCheckCircle } from 'react-icons/fi'; // Removed FiX since we don't need the modal close icon anymore
+import { FiBarChart2, FiCheckCircle } from 'react-icons/fi';
 import './AnalyticsDashboard.css';
 
 const AnalyticsDashboard = () => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState(0);
-  
-  // Removed the modal state and toggle function!
 
   const tabs = t('analytics.tabs', { returnObjects: true }) || [];
   const bullets = t('analytics.bullets', { returnObjects: true }) || [];
@@ -17,7 +15,7 @@ const AnalyticsDashboard = () => {
       <div className="ad-container">
         <div className="ad-grid">
 
-          {/* Left: Dashboard Visual */}
+          {/* Left: Dashboard Visual (NOW FULLY TRANSLATED) */}
           <div className="ad-visual" data-aos="fade-right">
             <div className="ad-mockup">
 
@@ -36,15 +34,15 @@ const AnalyticsDashboard = () => {
               <div className="ad-dashboard">
                 <div className="ad-metrics">
                   <div className="ad-metric">
-                    <span className="ad-metric__label">Total Tickets</span>
+                    <span className="ad-metric__label">{t('analytics.mockup.total_tickets', 'Total Tickets')}</span>
                     <span className="ad-metric__value">1,284</span>
                   </div>
                   <div className="ad-metric">
-                    <span className="ad-metric__label">Avg Wait Time</span>
+                    <span className="ad-metric__label">{t('analytics.mockup.avg_wait', 'Avg Wait Time')}</span>
                     <span className="ad-metric__value">12m</span>
                   </div>
                   <div className="ad-metric">
-                    <span className="ad-metric__label">Service Time</span>
+                    <span className="ad-metric__label">{t('analytics.mockup.service_time', 'Service Time')}</span>
                     <span className="ad-metric__value">8m</span>
                   </div>
                 </div>
@@ -90,11 +88,15 @@ const AnalyticsDashboard = () => {
               ))}
             </ul>
 
-            
             <a 
               href="#contacts"
               className="ad-btn" 
-              style={{ textDecoration: 'none' }}
+              style={{ 
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px'
+              }}
               data-aos="fade-up"
               data-aos-delay="600"
             >
@@ -105,9 +107,6 @@ const AnalyticsDashboard = () => {
 
         </div>
       </div>
-      
-      
-
     </section>
   );
 };

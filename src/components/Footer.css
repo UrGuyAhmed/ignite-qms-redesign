@@ -45,19 +45,21 @@
 .demo-textarea {
   width: 100%;
   padding: 0.85rem 1rem;
-  border: 1px solid #FF6A00; /* IgniteQMS Orange border */
+  border: none; /* Fixed the missing semicolon here! */
   border-radius: 4px;
   font-family: inherit;
   font-size: 0.95rem;
   color: #1A202C;
   background-color: #FFFFFF;
   outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Added subtle shadow so it pops cleanly */
   transition: box-shadow 0.2s;
 }
 
 .demo-input:focus,
 .demo-textarea:focus {
-  box-shadow: 0 0 0 2px rgba(255, 106, 0, 0.2);
+  /* Replaced the orange glow with a crisp, neutral focus ring */
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
 .demo-input::placeholder,
@@ -68,6 +70,14 @@
 
 .demo-textarea {
   resize: vertical;
+}
+
+/* Browsers force LTR rendering on type="tel" (and often type="email"/"number")
+   regardless of the page's dir attribute, since phone numbers are usually
+   written left-to-right. Override it so it follows the page direction. */
+[dir="rtl"] .demo-input[type="tel"] {
+  text-align: right;
+  direction: rtl;
 }
 
 .demo-submit-btn {

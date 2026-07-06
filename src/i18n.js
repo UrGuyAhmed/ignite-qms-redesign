@@ -23,6 +23,12 @@ const resources = {
         title: "Transformez chaque attente en une expérience fluide et maîtrisée.",
         subtitle: "Ignite QMS centralise l'accueil, l'orientation, l'appel des visiteurs et l'analyse de vos performances dans une solution complète, personnalisable et déployée localement en Algérie.",
         cta_primary: "Tester la démo gratuitement",
+        cta_secondary: "Demander une présentation",
+        trust_points: [
+          "Solution personnalisable",
+          "Installation sur site",
+          "Logiciel et matériel conçus en Algérie"
+        ],
         features: {
           multi_branch: "MULTI-SITES",
           multi_branch_desc: "Gérez plusieurs agences",
@@ -198,6 +204,7 @@ const resources = {
       how: {
         eyebrow: "UN PARCOURS SIMPLE ET EFFICACE",
         title: "Une meilleure expérience dès l'entrée de vos visiteurs.",
+        step_label: "Étape",
         s1_title: "Le visiteur choisit son service",
         s1_desc: "Depuis la borne tactile, le visiteur sélectionne rapidement le service souhaité dans la langue de son choix.",
         s2_title: "Un ticket personnalisé est généré",
@@ -274,12 +281,22 @@ const resources = {
         modal: {
           title: "Des indicateurs utiles pour améliorer vos opérations",
           text: "Visualisez la performance de vos services sur une période donnée, comparez les guichets, identifiez les points de congestion et adaptez vos ressources aux besoins réels de votre établissement."
+        },
+        stats: {
+          service_time: "TEMPS DE SERVICE",
+          avg_wait_time: "TEMPS D'ATTENTE MOYEN",
+          total_tickets: "TOTAL DES TICKETS"
         }
+      },
+      "clients": {
+        "title": "Des organisations de référence nous font confiance",
+        "subtitle": "Entreprises, institutions publiques et organisations internationales utilisent Ignite QMS pour moderniser l'accueil de leurs visiteurs."
       },
       "customization": {
         "eyebrow": "VOTRE IDENTITÉ VISUELLE",
         "title": "Une solution qui s'intègre naturellement à votre établissement.",
         "desc": "Chaque point de contact peut être personnalisé pour offrir une expérience cohérente avec votre image de marque.",
+        "test_colors": "Testez vos couleurs :",
         "bullets": [
           "Logo et couleurs de votre organisation",
           "Écrans d'accueil personnalisés",
@@ -289,7 +306,17 @@ const resources = {
           "Annonces vocales configurables",
           "QR codes et informations additionnelles sur les tickets"
         ],
-        "cta": "Voir les options de personnalisation"
+        "cta": "Voir les options de personnalisation",
+        "mockup": {
+          "lang": "FR",
+          "service1": "Service 1",
+          "service2": "Service 2",
+          "service3": "Service 3",
+          "ticket_service": "Service Client",
+          "counter": "Guichet",
+          "ticker": "Veuillez préparer votre pièce d'identité.",
+          "ticket_footer": "Bienvenue"
+        }
       }
     }
   },
@@ -314,6 +341,12 @@ const resources = {
         title: "Transform every wait into a seamless and controlled experience.",
         subtitle: "Ignite QMS centralizes reception, orientation, visitor calling, and performance analysis into a complete, customizable solution deployed locally.",
         cta_primary: "Try the demo for free",
+        cta_secondary: "Request a presentation",
+        trust_points: [
+          "Customizable solution",
+          "On-site installation",
+          "Software & hardware designed in Algeria"
+        ],
         features: {
           multi_branch: "MULTI BRANCHES",
           multi_branch_desc: "Across Multiple Languages",
@@ -492,6 +525,7 @@ const resources = {
       how: {
         eyebrow: "A SIMPLE AND EFFICIENT JOURNEY",
         title: "A better experience right from your visitors' arrival.",
+        step_label: "Step",
         s1_title: "The visitor chooses their service",
         s1_desc: "From the touch kiosk, the visitor quickly selects their desired service in the language of their choice.",
         s2_title: "A personalized ticket is generated",
@@ -569,23 +603,21 @@ const resources = {
           title: "Useful indicators to improve your operations",
           text: "Visualize the performance of your services over a given period, compare counters, identify congestion points, and adapt your resources to your establishment's real needs."
         },
-        "hero": {
-          "eyebrow": "QUEUE MANAGEMENT SYSTEM",
-          "title": "Transform every wait into a seamless and controlled experience.",
-          "subtitle": "Ignite QMS centralizes reception, orientation, visitor calling, and performance analysis into a complete, customizable solution deployed locally in Algeria.",
-          "cta_primary": "Try the demo for free",
-          "cta_secondary": "Request a presentation",
-          "trust_points": [
-            "Customizable solution",
-            "On-site installation",
-            "Software & hardware designed in Algeria"
-          ]
+        stats: {
+          service_time: "SERVICE TIME",
+          avg_wait_time: "AVG WAIT TIME",
+          total_tickets: "TOTAL TICKETS"
         }
+      },
+      "clients": {
+        "title": "Trusted by leading organizations",
+        "subtitle": "Companies, public institutions, and international organizations use Ignite QMS to modernize their visitor reception."
       },
       "customization": {
         "eyebrow": "YOUR VISUAL IDENTITY",
         "title": "A solution that integrates naturally into your establishment.",
         "desc": "Every touchpoint can be customized to provide a consistent experience with your brand image.",
+        "test_colors": "Test your colors:",
         "bullets": [
           "Your organization's logo and colors",
           "Custom welcome screens",
@@ -595,7 +627,17 @@ const resources = {
           "Configurable voice announcements",
           "QR codes and additional information on tickets"
         ],
-        "cta": "See customization options"
+        "cta": "See customization options",
+        "mockup": {
+          "lang": "EN",
+          "service1": "Service 1",
+          "service2": "Service 2",
+          "service3": "Service 3",
+          "ticket_service": "Customer Service",
+          "counter": "Counter",
+          "ticker": "Please prepare your ID.",
+          "ticket_footer": "Welcome"
+        }
       }
     }
   },
@@ -620,6 +662,12 @@ const resources = {
         title: "حوّل كل انتظار إلى تجربة سلسة ومحكمة.",
         subtitle: "يقوم نظام Ignite QMS بمركزة الاستقبال والتوجيه واستدعاء الزوار وتحليل أدائك في حل متكامل وقابل للتخصيص يتم نشره محلياً في الجزائر.",
         cta_primary: "جرب النسخة التجريبية مجاناً",
+        cta_secondary: "اطلب عرضاً تقديمياً",
+        trust_points: [
+          "حل قابل للتخصيص",
+          "تركيب في الموقع",
+          "برامج ومعدات مصممة في الجزائر"
+        ],
         features: {
           multi_branch: "فروع متعددة",
           multi_branch_desc: "عبر لغات متعددة",
@@ -798,6 +846,7 @@ const resources = {
       how: {
         eyebrow: "مسار بسيط وفعال",
         title: "تجربة أفضل منذ لحظة وصول زوارك.",
+        step_label: "الخطوة",
         s1_title: "يختار الزائر خدمته",
         s1_desc: "من خلال الكشك اللمسي، يختار الزائر بسرعة الخدمة المطلوبة باللغة التي يختارها.",
         s2_title: "يتم إنشاء تذكرة مخصصة",
@@ -875,35 +924,21 @@ const resources = {
           title: "مؤشرات مفيدة لتحسين عملياتك",
           text: "تصور أداء خدماتك خلال فترة زمنية معينة، وقارن بين الشبابيك، وحدد نقاط الازدحام، وقم بتكييف مواردك مع الاحتياجات الحقيقية لمؤسستك."
         },
-        "hero":{
-          "eyebrow": "SYSTÈME DE GESTION DE FILES D'ATTENTE",
-          "title": "Transformez chaque attente en une expérience fluide et maîtrisée.",
-          "subtitle": "Ignite QMS centralise l'accueil, l'orientation, l'appel des visiteurs et l'analyse de vos performances dans une solution complète, personnalisable et déployée localement en Algérie.",
-          "cta_primary": "Tester la démo gratuitement",
-          "cta_secondary": "Demander une présentation",
-          "trust_points": [
-            "Solution personnalisable",
-            "Installation sur site",
-            "Logiciel et matériel conçus en Algérie"
-          ]
-        },
-        "hero": {
-          "eyebrow": "نظام إدارة طوابير الانتظار",
-          "title": "حوّل كل انتظار إلى تجربة سلسة ومحكمة.",
-          "subtitle": "يقوم نظام Ignite QMS بمركزة الاستقبال والتوجيه واستدعاء الزوار وتحليل أدائك في حل متكامل وقابل للتخصيص يتم نشره محلياً في الجزائر.",
-          "cta_primary": "جرب النسخة التجريبية مجاناً",
-          "cta_secondary": "اطلب عرضاً تقديمياً",
-          "trust_points": [
-            "حل قابل للتخصيص",
-            "تركيب في الموقع",
-            "برامج ومعدات مصممة في الجزائر"
-          ]
+        stats: {
+          service_time: "وقت الخدمة",
+          avg_wait_time: "متوسط وقت الانتظار",
+          total_tickets: "إجمالي التذاكر"
         }
+      },
+      "clients": {
+        "title": "تثق بنا مؤسسات رائدة",
+        "subtitle": "تستخدم الشركات والمؤسسات العامة والمنظمات الدولية نظام Ignite QMS لتحديث استقبال زوارها."
       },
       "customization": {
         "eyebrow": "هويتك البصرية",
         "title": "حل يندمج بشكل طبيعي في مؤسستك.",
         "desc": "يمكن تخصيص كل نقطة اتصال لتقديم تجربة متسقة مع صورة علامتك التجارية.",
+        "test_colors": "جرب ألوانك:",
         "bullets": [
           "شعار وألوان مؤسستك",
           "شاشات ترحيب مخصصة",
@@ -913,7 +948,17 @@ const resources = {
           "إعلانات صوتية قابلة للتكوين",
           "رموز الاستجابة السريعة ومعلومات إضافية على التذاكر"
         ],
-        "cta": "اطلع على خيارات التخصيص"
+        "cta": "اطلع على خيارات التخصيص",
+        "mockup": {
+          "lang": "AR",
+          "service1": "الخدمة 1",
+          "service2": "الخدمة 2",
+          "service3": "الخدمة 3",
+          "ticket_service": "خدمة العملاء",
+          "counter": "الشباك",
+          "ticker": "يرجى تحضير بطاقة هويتك.",
+          "ticket_footer": "مرحباً"
+        }
       }
     }
   }

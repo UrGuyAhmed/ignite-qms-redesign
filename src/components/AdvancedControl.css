@@ -82,11 +82,12 @@
 .sec7-check-icon {
   color: var(--qms-orange);
   font-size: 1.25rem;
-  margin-inline-end: 1rem;
+  margin-inline-end: 1rem; /* Works dynamically for both LTR and RTL */
   flex-shrink: 0;
   margin-top: 0.15rem;
 }
 
+/* --- Fixed CTA Button (Anchor Tag) Styles --- */
 .sec7-btn {
   background-color: var(--qms-orange);
   color: var(--qms-white);
@@ -96,11 +97,30 @@
   font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
+
+  /* Added fixes for the anchor tag conversion */
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 6px rgba(255, 127, 17, 0.2);
+}
+
+.sec7-btn:hover {
+  background-color: #e66a00; /* Darker orange on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 127, 17, 0.3);
+  color: var(--qms-white);
 }
 
 /* RTL OVERRIDE */
 [dir="rtl"] .sec7-grid {
   flex-direction: row-reverse;
+}
+
+[dir="rtl"] .sec7-btn {
+  align-self: flex-start; /* Ensures button aligns correctly in Arabic */
 }
 
 /* MOBILE FALLBACK */
@@ -117,9 +137,36 @@
 
 /* Modal Scoped Styles */
 .sec7-modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(14, 13, 31, 0.8); display: flex; justify-content: center; align-items: center; z-index: 1000; padding: 1rem; backdrop-filter: blur(4px); }
-.sec7-modal-content { background: var(--qms-white); padding: 2.5rem; border-radius: 12px; max-width: 600px; width: 100%; position: relative; }
-.sec7-modal-close { position: absolute; top: 1rem; right: 1rem; background: transparent; border: none; font-size: 1.5rem; cursor: pointer; color: var(--qms-dark); opacity: 0.5; }
+.sec7-modal-content {
+  background: var(--qms-white, #ffffff);
+  padding: 2.5rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  color: var(--qms-dark, #0E0D1F);
+}
+.sec7-modal-content h2,
+.sec7-modal-content h3,
+.sec7-modal-content p {
+  color: var(--qms-dark, #0E0D1F);
+}
+.sec7-modal-close { position: absolute; top: 1rem; right: 1rem; background: transparent; border: none; font-size: 1.5rem; cursor: pointer; color: var(--qms-dark, #0E0D1F); opacity: 0.5; }
 [dir="rtl"] .sec7-modal-close { right: auto; left: 1rem; }
 .sec7-modal-highlights { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
-.sec7-highlight-item { display: flex; align-items: center; background: rgba(14, 13, 31, 0.04); padding: 0.75rem 1rem; border-radius: 6px; }
-.sec7-highlight-dot { width: 8px; height: 8px; background-color: var(--qms-orange); border-radius: 50%; margin-inline-end: 0.75rem; }
+
+/* Increased contrast: solid tinted background, visible border, and explicit text color */
+.sec7-highlight-item {
+  display: flex;
+  align-items: center;
+  background: rgba(14, 13, 31, 0.06);
+  border: 1px solid rgba(14, 13, 31, 0.12);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  color: var(--qms-dark, #0E0D1F);
+  font-weight: 600;
+}
+.sec7-highlight-item:hover {
+  background: rgba(14, 13, 31, 0.1);
+}
+.sec7-highlight-dot { width: 8px; height: 8px; background-color: var(--qms-orange, #FF7F11); border-radius: 50%; margin-inline-end: 0.75rem; flex-shrink: 0; }

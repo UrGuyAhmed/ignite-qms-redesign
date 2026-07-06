@@ -41,7 +41,7 @@ const HowItWorks = () => {
                 {icons[index]}
               </div>
               <div className="how-step-content">
-                <span className="how-step-num">Step {num}</span>
+                <span className="how-step-num">{t('how.step_label', 'Step')} {num}</span>
                 <h3>{t(`how.s${num}_title`)}</h3>
                 <p>{t(`how.s${num}_desc`)}</p>
               </div>

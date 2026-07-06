@@ -97,8 +97,7 @@ const Navbar = () => {
               )}
             </div>
 
-            <Link to="/contact" className="btn btn--secondary navbar-btn-secondary">{t('cta.demo')}</Link>
-            <Link to="/contact" className="btn btn--primary">{t('cta.test')}</Link>
+            <Link to="/contact" className="btn btn--primary">{t('cta.demo')}</Link>
           </div>
 
           <button className="burger-btn mobile-only" onClick={() => setIsDrawerOpen(true)}>
@@ -139,7 +138,7 @@ const Navbar = () => {
             </div>
             
             <Link to="/contact" className="btn btn--primary" style={{ width: '100%', textAlign: 'center', marginBottom: '1rem' }} onClick={() => setIsDrawerOpen(false)}>
-              {t('cta.test')}
+              {t('cta.demo')}
             </Link>
 
             <a href="tel:+213770625655" className="contact-link">📞 +213 770 625 655</a>
