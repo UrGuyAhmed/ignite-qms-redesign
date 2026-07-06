@@ -21,14 +21,20 @@ const Customization = () => {
       <div className="container">
         <div className="customization-grid">
           
-          {/* Left Side: Text & Swatches */}
+          {/* Left Side: Text & Swatches (Staggered Fade Up) */}
           <div className="customization-content">
-            <span className="eyebrow">{t('customization.eyebrow')}</span>
-            <h2>{t('customization.title')}</h2>
-            <p className="description">{t('customization.desc')}</p>
+            <span className="eyebrow" data-aos="fade-up">
+              {t('customization.eyebrow')}
+            </span>
+            <h2 data-aos="fade-up" data-aos-delay="100">
+              {t('customization.title')}
+            </h2>
+            <p className="description" data-aos="fade-up" data-aos-delay="200">
+              {t('customization.desc')}
+            </p>
             
             {/* Color Swatch Selector */}
-            <div className="theme-selector">
+            <div className="theme-selector" data-aos="fade-up" data-aos-delay="300">
               <span className="theme-label">Testez vos couleurs :</span>
               <div className="swatch-container">
                 {colorThemes.map((theme) => (
@@ -45,24 +51,46 @@ const Customization = () => {
 
             <ul className="feature-list">
               {bullets.map((bullet, index) => (
-                <li key={index}>
+                <li 
+                  key={index}
+                  data-aos="fade-up"
+                  data-aos-delay={400 + index * 100} 
+                >
                   <FiCheck className="check-icon" style={{ color: activeTheme.hex }} />
                   <span>{bullet}</span>
                 </li>
               ))}
             </ul>
 
-            <button className="btn-primary" style={{ backgroundColor: activeTheme.hex }}>
+            {/* Changed from <button> to <a> and linked to the footer ID */}
+            {/* Added inline-flex and gap: 8px to fix the icon overlapping the text */}
+            <a 
+              href="#contacts"
+              className="btn-primary" 
+              style={{ 
+                backgroundColor: activeTheme.hex, 
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px'
+              }}
+              data-aos="fade-up"
+              data-aos-delay="700"
+            >
               <FiSliders className="btn-icon" />
               {t('customization.cta')}
-            </button>
+            </a>
           </div>
 
-          {/* Right Side: Interactive Mockups */}
+          {/* Right Side: Interactive Mockups (Staggered Fade Left) */}
           <div className="customization-visuals">
             
             {/* Mockup 1: Kiosk Interface */}
-            <div className="mockup-kiosk card-shadow">
+            <div 
+              className="mockup-kiosk card-shadow" 
+              data-aos="fade-left" 
+              data-aos-delay="200"
+            >
               <div className="kiosk-header" style={{ backgroundColor: activeTheme.hex }}>
                 <div className="mock-logo">LOGO</div>
                 <div className="mock-lang">FR</div>
@@ -75,7 +103,11 @@ const Customization = () => {
             </div>
 
             {/* Mockup 2: Printed Ticket */}
-            <div className="mockup-ticket card-shadow">
+            <div 
+              className="mockup-ticket card-shadow" 
+              data-aos="fade-left" 
+              data-aos-delay="400"
+            >
               <div className="ticket-logo" style={{ color: activeTheme.hex }}>LOGO</div>
               <div className="ticket-date">14/10/2026 - 10:30</div>
               <div className="ticket-number">A-142</div>
@@ -87,7 +119,11 @@ const Customization = () => {
             </div>
 
             {/* Mockup 3: Display Screen */}
-            <div className="mockup-display card-shadow">
+            <div 
+              className="mockup-display card-shadow" 
+              data-aos="fade-left" 
+              data-aos-delay="600"
+            >
               <div className="display-main">
                 <div className="display-ticket-call" style={{ color: activeTheme.hex }}>A-142</div>
                 <div className="display-counter">Guichet 03</div>

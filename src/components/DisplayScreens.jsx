@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FiMonitor, FiX, FiCheck } from 'react-icons/fi';
+import { FiMonitor, FiCheck } from 'react-icons/fi'; // Removed FiX since the modal is gone
 import './DisplayScreens.css';
 
 const DisplayScreens = () => {
   const { t } = useTranslation();
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  // Removed the modal state!
   const [ticketNumber, setTicketNumber] = useState(160);
 
   const bullets = t('display_screens.bullets', { returnObjects: true }) || [];
-
-  const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -24,29 +23,53 @@ const DisplayScreens = () => {
       <div className="ds-container">
         <div className="ds-grid">
 
-          {/* Left: Text Content */}
+          {/* Left: Text Content - Staggered Fade Up */}
           <div className="ds-content">
-            <span className="ds-eyebrow">{t('display_screens.eyebrow')}</span>
-            <h2 className="ds-title">{t('display_screens.title')}</h2>
-            <p className="ds-desc">{t('display_screens.desc')}</p>
+            <span className="ds-eyebrow" data-aos="fade-up">
+              {t('display_screens.eyebrow')}
+            </span>
+            <h2 className="ds-title" data-aos="fade-up" data-aos-delay="100">
+              {t('display_screens.title')}
+            </h2>
+            <p className="ds-desc" data-aos="fade-up" data-aos-delay="200">
+              {t('display_screens.desc')}
+            </p>
 
             <ul className="ds-bullets">
               {bullets.map((bullet, index) => (
-                <li key={index} className="ds-bullet-item">
+                <li 
+                  key={index} 
+                  className="ds-bullet-item"
+                  data-aos="fade-up" 
+                  data-aos-delay={300 + index * 100} 
+                >
                   <FiCheck className="ds-check-icon" />
                   <span>{bullet}</span>
                 </li>
               ))}
             </ul>
 
-            <button className="ds-btn" onClick={toggleModal}>
+            {/* Changed from <button> to <a> and linked to the footer ID */}
+            {/* Added gap and inline-flex for perfect icon alignment */}
+            <a 
+              href="#contacts"
+              className="ds-btn" 
+              style={{ 
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px'
+              }}
+              data-aos="fade-up" 
+              data-aos-delay="600" 
+            >
               <FiMonitor />
               {t('display_screens.cta')}
-            </button>
+            </a>
           </div>
 
-          {/* Right: TV Mockup */}
-          <div className="ds-visual">
+          {/* Right: TV Mockup - Slides in from the right */}
+          <div className="ds-visual" data-aos="fade-left" data-aos-delay="200">
             <div className="ds-tv-mockup">
               <div className="ds-tv-screen">
 
@@ -74,6 +97,7 @@ const DisplayScreens = () => {
                 </div>
 
                 <div className="ds-ticker">
+                  {/* eslint-disable-next-line jsx-a11y/no-distracting-elements */}
                   <marquee>Welcome to our center. Please have your documents ready.</marquee>
                 </div>
 
@@ -84,15 +108,8 @@ const DisplayScreens = () => {
         </div>
       </div>
 
-      {isModalOpen && (
-        <div className="ds-modal-overlay" onClick={toggleModal}>
-          <div className="ds-modal" onClick={(e) => e.stopPropagation()}>
-            <button className="ds-modal-close" onClick={toggleModal}><FiX /></button>
-            <h3>{t('display_screens.modal.title')}</h3>
-            <p>{t('display_screens.modal.text')}</p>
-          </div>
-        </div>
-      )}
+      {/* The modal block that used to be here has been fully removed */}
+      
     </section>
   );
 };

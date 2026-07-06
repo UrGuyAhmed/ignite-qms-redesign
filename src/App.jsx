@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
+// --- AOS Imports ---
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import Navbar from './components/Navbar';
-import Clients from './components/Solution'; 
+import Solution from './components/Solution'; 
 import Showcase from './components/Showcase'; 
 import HowItWorks from './components/HowItWorks';
 import MultiDevice from './components/MultiDevice';
@@ -14,18 +18,16 @@ import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import ContactPage from './pages/ContactPage';
 import FloatingActions from './components/FloatingActions';
-import PageLoader from './components/PageLoader'; // <-- 1. Import your new loader
+import PageLoader from './components/PageLoader'; 
 
-// 2. Add the Transition Wrapper
+// Transition Wrapper
 const PageTransitionWrapper = ({ children }) => {
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    // Show the video overlay when the route changes
     setIsLoading(true);
 
-    // Hide it after 1 second (1000ms). Adjust this to match your video length!
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1500);
@@ -48,7 +50,7 @@ const Home = () => (
     <main style={{ flex: 1 }}> 
       {/* 1. Solution */}
       <section id="solution">
-        <Clients />  
+        <Solution />  
       </section>
 
       {/* 2. Features (Fonctionnalités) */}
@@ -90,9 +92,17 @@ const Home = () => (
 );
 
 function App() {
+  // Initialize AOS globally when the app loads
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // The animation takes 1 second
+      once: true,     // Elements only animate once when you scroll down
+      offset: 100,    // Triggers the animation 100px before the element enters the screen
+    });
+  }, []);
+
   return (
     <Router>
-      {/* 3. Wrap your Routes inside the Transition Wrapper */}
       <PageTransitionWrapper>
         <Routes>
           <Route path="/" element={<Home />} />

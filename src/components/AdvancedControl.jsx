@@ -39,31 +39,44 @@ const AdvancedControl = () => {
         
         <div className="sec7-grid">
           
-          {/* Left Side: Visual */}
-          <div className="sec7-visual">
+          {/* Left Side: Visual (Slides in from the left) */}
+          <div className="sec7-visual" data-aos="fade-right">
             <div className="sec7-image-wrapper">
               <img src={dashboardImg} alt="Ignite QMS Admin Dashboard" className="sec7-img" />
             </div>
           </div>
 
-          {/* Right Side: Text Content */}
+          {/* Right Side: Text Content (Staggered Fade Up) */}
           <div className="sec7-content">
-            <span className="sec7-eyebrow">{t('queue_control.eyebrow', 'GESTION DES FLUX')}</span>
-            <h2 className="sec7-title">{t('queue_control.title', "Gardez le contrôle sur chaque file d'attente.")}</h2>
-            <p className="sec7-description">
+            <span className="sec7-eyebrow" data-aos="fade-up">
+              {t('queue_control.eyebrow', 'GESTION DES FLUX')}
+            </span>
+            <h2 className="sec7-title" data-aos="fade-up" data-aos-delay="100">
+              {t('queue_control.title', "Gardez le contrôle sur chaque file d'attente.")}
+            </h2>
+            <p className="sec7-description" data-aos="fade-up" data-aos-delay="200">
               {t('queue_control.desc', "Organisez vos visiteurs efficacement, réduisez les files physiques et améliorez la répartition de la charge entre vos équipes.")}
             </p>
             
             <ul className="sec7-feature-list">
               {bullets.map((bullet, index) => (
-                <li key={index}>
+                <li 
+                  key={index}
+                  data-aos="fade-up"
+                  data-aos-delay={300 + index * 100} // Dynamic staggering
+                >
                   <FiCheckCircle className="sec7-check-icon" />
                   <span>{bullet}</span>
                 </li>
               ))}
             </ul>
 
-            <button className="sec7-btn" onClick={toggleModal}>
+            <button 
+              className="sec7-btn" 
+              onClick={toggleModal}
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
               {t('queue_control.cta', 'Découvrir les fonctionnalités')}
             </button>
           </div>

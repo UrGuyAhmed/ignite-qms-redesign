@@ -9,35 +9,37 @@ const Credibility = () => {
   return (
     <section className="credibility-section">
       <div className="credibility-container">
-        <div className="cred-card">
+        
+        <div className="cred-card" data-aos="fade-up" data-aos-delay="0">
           <FaBuilding className="cred-icon" />
           <h4 className="cred-title">{t('credibility.c1_title')}</h4>
           <p className="cred-desc">{t('credibility.c1_desc')}</p>
         </div>
         
-        <div className="cred-card">
+        <div className="cred-card" data-aos="fade-up" data-aos-delay="150">
           <FaGlobe className="cred-icon" />
           <h4 className="cred-title">{t('credibility.c2_title')}</h4>
           <p className="cred-desc">{t('credibility.c2_desc')}</p>
         </div>
 
-        <div className="cred-card">
+        <div className="cred-card" data-aos="fade-up" data-aos-delay="300">
           <FaBolt className="cred-icon" />
           <h4 className="cred-title">{t('credibility.c3_title')}</h4>
           <p className="cred-desc">{t('credibility.c3_desc')}</p>
         </div>
 
-        <div className="cred-card">
+        <div className="cred-card" data-aos="fade-up" data-aos-delay="450">
           <FaCogs className="cred-icon" />
           <h4 className="cred-title">{t('credibility.c4_title')}</h4>
           <p className="cred-desc">{t('credibility.c4_desc')}</p>
         </div>
 
-        <div className="cred-card">
+        <div className="cred-card" data-aos="fade-up" data-aos-delay="600">
           <FaCode className="cred-icon" />
           <h4 className="cred-title">{t('credibility.c5_title')}</h4>
           <p className="cred-desc">{t('credibility.c5_desc')}</p>
         </div>
+        
       </div>
     </section>
   );

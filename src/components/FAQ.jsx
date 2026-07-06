@@ -5,13 +5,13 @@ import './FAQ.css';
 
 const FAQ = () => {
   const { t } = useTranslation();
-  const [openIndex, setOpenIndex] = useState(0);
+  // Keeps the first question open by default
+  const [openIndex, setOpenIndex] = useState(0); 
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  // Simplified to 3 questions since the video is moving!
   const faqs = [
     { question: t('faq.q1'), answer: t('faq.a1') },
     { question: t('faq.q2'), answer: t('faq.a2') },
@@ -21,9 +21,14 @@ const FAQ = () => {
   return (
     <section className="faq-section" id="faq">
       <div className="faq-container">
-        <h2 className="faq-title">{t('faq.title')}</h2>
         
-        <div className="faq-card">
+        {/* 1. Title fades and drops down */}
+        <h2 className="faq-title" data-aos="fade-down">
+          {t('faq.title')}
+        </h2>
+        
+        {/* 2. The entire FAQ card container slides up gracefully */}
+        <div className="faq-card" data-aos="fade-up" data-aos-delay="150">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             
@@ -52,6 +57,7 @@ const FAQ = () => {
             </Link>
           </div>
         </div>
+
       </div>
     </section>
   );

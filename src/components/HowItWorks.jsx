@@ -22,14 +22,21 @@ const HowItWorks = () => {
     <section className="how-section" id="how-it-works">
       <div className="how-container">
         
+        {/* Header Content Animations */}
         <div className="how-header">
-          <span className="how-eyebrow">{t('how.eyebrow')}</span>
-          <h2 className="how-title">{t('how.title')}</h2>
+          <span className="how-eyebrow" data-aos="fade-up">{t('how.eyebrow')}</span>
+          <h2 className="how-title" data-aos="fade-up" data-aos-delay="100">{t('how.title')}</h2>
         </div>
 
+        {/* Timeline Items Stagger Automatically */}
         <div className="how-timeline">
           {[1, 2, 3, 4, 5].map((num, index) => (
-            <div key={num} className="how-step-card">
+            <div 
+              key={num} 
+              className="how-step-card" 
+              data-aos="fade-up" 
+              data-aos-delay={index * 150} // 0ms, 150ms, 300ms, 450ms, 600ms
+            >
               <div className="how-step-icon">
                 {icons[index]}
               </div>
@@ -42,7 +49,8 @@ const HowItWorks = () => {
           ))}
         </div>
 
-        <div className="how-footer">
+        {/* Footer CTA Button */}
+        <div className="how-footer" data-aos="zoom-in" data-aos-delay="300">
           <button 
             className="btn btn--primary how-cta-btn"
             onClick={() => setIsVideoOpen(true)}

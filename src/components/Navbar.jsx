@@ -46,7 +46,8 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+      {/* Added AOS fade-down so the navbar drops in on load */}
+      <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`} data-aos="fade-down" data-aos-once="true">
         <div className="navbar__container">
           
           <div className="navbar__logo-wrapper">

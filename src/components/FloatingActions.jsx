@@ -7,25 +7,32 @@ import './FloatingActions.css';
 const FloatingActions = () => {
   const { t } = useTranslation();
 
-  // Replace these with your actual contact details
-  const whatsappNumber = "213000000000"; 
-  const phoneNumber = "tel:+213000000000";
+  // Updated with the actual contact details from your Footer
+  const whatsappNumber = "213770625655"; 
+  const phoneNumber = "tel:+213770625655";
 
   return (
     <>
-      {/* 1. Floating WhatsApp Icon (Visible mostly on Desktop, hidden on mobile where sticky bar takes over) */}
+      {/* 1. Floating WhatsApp Icon */}
       <a 
         href={`https://wa.me/${whatsappNumber}`} 
         className="floating-whatsapp"
         target="_blank" 
         rel="noopener noreferrer"
         aria-label="Contactez-nous sur WhatsApp"
+        data-aos="zoom-in"
+        data-aos-delay="800" 
       >
         <FaWhatsapp className="whatsapp-icon" />
       </a>
 
-      {/* 2. Mobile Sticky Bottom Bar (Visible ONLY on mobile devices) */}
-      <div className="mobile-sticky-bar">
+      {/* 2. Mobile Sticky Bottom Bar */}
+      <div 
+        className="mobile-sticky-bar"
+        data-aos="fade-up"
+        data-aos-delay="800"
+        data-aos-anchor-placement="bottom-bottom"
+      >
         <button className="sticky-btn demo-btn">
           <FiMonitor className="sticky-icon" />
           <span>{t('cta.test', 'Tester la démo')}</span>
