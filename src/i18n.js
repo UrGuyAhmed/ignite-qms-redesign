@@ -317,6 +317,16 @@ const resources = {
           "ticker": "Veuillez préparer votre pièce d'identité.",
           "ticket_footer": "Bienvenue"
         }
+      },
+      "cards": {
+        "c1_title": "Configuration sur mesure",
+        "c1_desc": "Créez des services, des catégories personnalisées et définissez des règles de priorité parfaitement adaptées à votre flux d'accueil.",
+        "c2_title": "Gestion des visiteurs",
+        "c2_desc": "Appelez, mettez en pause ou transférez facilement un visiteur vers un autre service en un clic, sans jamais perdre le contexte du ticket.",
+        "c3_title": "Supervision en direct",
+        "c3_desc": "Visualisez en temps réel l'état de toutes vos files actives, et affectez dynamiquement vos agents selon l'affluence de chaque guichet.",
+        "c4_title": "Traçabilité complète",
+        "c4_desc": "Conservez un journal détaillé de chaque interaction. Analysez l'historique complet pour optimiser vos opérations et réduire les temps d'attente."
       }
     }
   },
@@ -638,6 +648,16 @@ const resources = {
           "ticker": "Please prepare your ID.",
           "ticket_footer": "Welcome"
         }
+      },
+      "cards": {
+        "c1_title": "Custom Configuration",
+        "c1_desc": "Create services, custom categories, and define priority rules perfectly tailored to your visitor flow.",
+        "c2_title": "Visitor Management",
+        "c2_desc": "Call, pause, or easily transfer a visitor to another service with a single click, without ever losing the ticket context.",
+        "c3_title": "Live Supervision",
+        "c3_desc": "View the real-time status of all your active queues, and dynamically assign agents based on the traffic at each counter.",
+        "c4_title": "Complete Traceability",
+        "c4_desc": "Keep a detailed log of every interaction. Analyze the full history to optimize your operations and reduce wait times."
       }
     }
   },
@@ -959,6 +979,16 @@ const resources = {
           "ticker": "يرجى تحضير بطاقة هويتك.",
           "ticket_footer": "مرحباً"
         }
+      },
+      "cards": {
+        "c1_title": "تكوين مخصص",
+        "c1_desc": "قم بإنشاء خدمات وفئات مخصصة وتحديد قواعد الأولوية المصممة خصيصًا لتناسب تدفق زوارك.",
+        "c2_title": "إدارة الزوار",
+        "c2_desc": "قم باستدعاء أو إيقاف مؤقت أو تحويل الزائر بسهولة إلى خدمة أخرى بنقرة واحدة، دون فقدان سياق التذكرة.",
+        "c3_title": "إشراف مباشر",
+        "c3_desc": "اعرض الحالة في الوقت الفعلي لجميع طوابيرك النشطة، وقم بتعيين الوكلاء ديناميكيًا بناءً على الازدحام في كل شباك.",
+        "c4_title": "تتبع كامل",
+        "c4_desc": "احتفظ بسجل مفصل لكل تفاعل. قم بتحليل السجل الكامل لتحسين عملياتك وتقليل أوقات الانتظار."
       }
     }
   }

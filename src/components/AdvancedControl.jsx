@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FiCheckCircle, FiX } from 'react-icons/fi';
+import { FiX, FiSettings, FiUsers, FiActivity, FiClock } from 'react-icons/fi';
 import './AdvancedControl.css';
 
 import dashboardImg from '../assets/materiel/Dashboard.png'; 
@@ -11,16 +11,29 @@ const AdvancedControl = () => {
 
   const toggleModal = () => setIsModalOpen(!isModalOpen);
 
-  // Defensive i18n mapping
-  const rawBullets = t('queue_control.bullets', { returnObjects: true });
-  const bullets = Array.isArray(rawBullets) ? rawBullets : [
-    "Création de services et de catégories personnalisées",
-    "Appel et rappel des visiteurs",
-    "Transfert d'un ticket vers un autre service",
-    "Gestion de files prioritaires",
-    "Affectation des agents aux guichets",
-    "Visualisation en temps réel des files actives",
-    "Historique complet des tickets"
+  // Fixed: cards live at the top level of the translation resources ("cards.*"),
+  // not nested under "queue_control.cards.*"
+  const featureCards = [
+    {
+      icon: <FiSettings />,
+      title: t('cards.c1_title', 'Configuration sur mesure'),
+      desc: t('cards.c1_desc', "Créez des services, des catégories personnalisées et définissez des règles de priorité parfaitement adaptées à votre flux d'accueil.")
+    },
+    {
+      icon: <FiUsers />,
+      title: t('cards.c2_title', 'Gestion des visiteurs'),
+      desc: t('cards.c2_desc', "Appelez, mettez en pause ou transférez facilement un visiteur vers un autre service en un clic, sans jamais perdre le contexte du ticket.")
+    },
+    {
+      icon: <FiActivity />,
+      title: t('cards.c3_title', 'Supervision en direct'),
+      desc: t('cards.c3_desc', "Visualisez en temps réel l'état de toutes vos files actives, et affectez dynamiquement vos agents selon l'affluence de chaque guichet.")
+    },
+    {
+      icon: <FiClock />,
+      title: t('cards.c4_title', 'Traçabilité complète'),
+      desc: t('cards.c4_desc', "Conservez un journal détaillé de chaque interaction. Analysez l'historique complet pour optimiser vos opérations et réduire les temps d'attente.")
+    }
   ];
 
   const rawHighlights = t('queue_control.modal.highlights', { returnObjects: true });
@@ -39,14 +52,14 @@ const AdvancedControl = () => {
         
         <div className="sec7-grid">
           
-          {/* Left Side: Visual (Slides in from the left) */}
+          {/* Left Side: Visual */}
           <div className="sec7-visual" data-aos="fade-right">
             <div className="sec7-image-wrapper">
               <img src={dashboardImg} alt="Ignite QMS Admin Dashboard" className="sec7-img" />
             </div>
           </div>
 
-          {/* Right Side: Text Content (Staggered Fade Up) */}
+          {/* Right Side: Text Content & 4 Cards */}
           <div className="sec7-content">
             <span className="sec7-eyebrow" data-aos="fade-up">
               {t('queue_control.eyebrow', 'GESTION DES FLUX')}
@@ -58,18 +71,25 @@ const AdvancedControl = () => {
               {t('queue_control.desc', "Organisez vos visiteurs efficacement, réduisez les files physiques et améliorez la répartition de la charge entre vos équipes.")}
             </p>
             
-            <ul className="sec7-feature-list">
-              {bullets.map((bullet, index) => (
-                <li 
+            {/* The New 2x2 Card Grid */}
+            <div className="sec7-rich-cards">
+              {featureCards.map((card, index) => (
+                <div 
                   key={index}
+                  className="sec7-rich-card"
                   data-aos="fade-up"
-                  data-aos-delay={300 + index * 100} // Dynamic staggering
+                  data-aos-delay={300 + index * 100}
                 >
-                  <FiCheckCircle className="sec7-check-icon" />
-                  <span>{bullet}</span>
-                </li>
+                  <div className="sec7-card-icon-wrapper">
+                    {card.icon}
+                  </div>
+                  <div className="sec7-card-text">
+                    <h4>{card.title}</h4>
+                    <p>{card.desc}</p>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
 
             <button 
               className="sec7-btn" 
