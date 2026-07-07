@@ -6,13 +6,12 @@
 .md-container {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 80px;
 }
 
-.md-content {
-  flex: 1;
+.md-intro {
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+  text-align: center;
 }
 
 .md-eyebrow {
@@ -36,57 +35,120 @@
 .md-desc {
   color: #666;
   font-size: 1.1rem;
-  margin-bottom: 30px;
   line-height: 1.6;
 }
 
-.md-bullets {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 40px 0;
+/* --- 2x2 photo card grid --- */
+.md-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
 }
 
-.md-bullets li {
-  padding: 10px 0;
-  font-weight: 600;
-  color: #333;
-  display: flex;
-  align-items: center;
+.md-photo-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 4 / 3;
 }
 
-.md-bullets li::before {
-  content: "✓";
-  color: #ff6b00;
-  margin-right: 12px;
-  font-weight: bold;
+.md-photo-card-img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.md-visual {
-  flex: 1;
+.md-photo-card-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.25rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.md-photo-card-overlay span {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.md-cta-wrap {
   display: flex;
   justify-content: center;
+  margin-top: 2.5rem;
 }
 
-/* This creates the modern visual render box */
-.md-visual img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+@media (max-width: 768px) {
+  .md-title {
+    font-size: 1.9rem;
+  }
+  .md-card-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-@media (max-width: 992px) {
-  .md-container { flex-direction: column; text-align: center; }
-  .md-bullets { text-align: left; }
-}
-.md-visual-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 15px;
+/* --- Modal --- */
+.md-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(26, 26, 26, 0.8);
+  display: flex;
   align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
 }
 
-.md-img-kiosk { width: 100%; grid-row: span 2; }
-.md-img-desktop { width: 100%; border-radius: 8px; }
-.md-img-mobile { width: 60%; margin-left: auto; border-radius: 8px; }
+.md-modal-content {
+  background: #ffffff;
+  color: #1a1a1a;
+  padding: 2.5rem;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+}
+
+.md-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #1a1a1a;
+  opacity: 0.5;
+}
+
+[dir="rtl"] .md-modal-close { right: auto; left: 1rem; }
+
+.md-modal-title { font-size: 1.35rem; margin-bottom: 0.75rem; }
+.md-modal-text { font-size: 1rem; line-height: 1.6; color: #666; margin-bottom: 1.5rem; }
+
+.md-modal-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.md-modal-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(26, 26, 26, 0.05);
+  border: 1px solid rgba(26, 26, 26, 0.1);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.md-check-icon { color: #ff6b00; flex-shrink: 0; }
