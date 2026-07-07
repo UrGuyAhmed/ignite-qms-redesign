@@ -47,6 +47,20 @@ const resources = {
         eyebrow: "UN SYSTÈME, PLUSIEURS INTERFACES",
         title: "Une architecture flexible adaptée à votre organisation.",
         desc: "Ignite QMS s'adapte à votre environnement, que vous utilisiez une borne tactile, un poste informatique, une tablette ou un écran d'affichage.",
+        panelA: {
+          top: "Votre Entreprise",
+          bottom: "Flux Entry2Exit",
+          title: "Une nouvelle vision de l'accueil"
+        },
+        panelB: {
+          title: "Chaque appareil, une seule plateforme"
+        },
+        panelC: {
+          title: "Conçu pour la fluidité"
+        },
+        panelD: {
+          title: "Une performance inégalée"
+        },
         bullets: [
           "Bornes tactiles avec impression de tickets",
           "Interfaces adaptées aux agents et aux administrateurs",
@@ -280,7 +294,7 @@ const resources = {
         cta: "Explorer le tableau de bord",
         modal: {
           title: "Des indicateurs utiles pour améliorer vos opérations",
-          text: "Visualisez la performance de vos services sur une période donnée, comparez les guichets, identifiez les points de congestion et adaptez vos ressources aux besoins réels de votre établissement."
+          text: "Visualisez la performance de vos services sur une période donnée, comparez les guichets, identifiez points de congestion et adaptez vos ressources aux besoins réels de votre établissement."
         },
         stats: {
           service_time: "TEMPS DE SERVICE",
@@ -288,16 +302,16 @@ const resources = {
           total_tickets: "TOTAL DES TICKETS"
         }
       },
-      "clients": {
-        "title": "Des organisations de référence nous font confiance",
-        "subtitle": "Entreprises, institutions publiques et organisations internationales utilisent Ignite QMS pour moderniser l'accueil de leurs visiteurs."
+      clients: {
+        title: "Des organisations de référence nous font confiance",
+        subtitle: "Entreprises, institutions publiques et organisations internationales utilisent Ignite QMS pour moderniser l'accueil de leurs visiteurs."
       },
-      "customization": {
-        "eyebrow": "VOTRE IDENTITÉ VISUELLE",
-        "title": "Une solution qui s'intègre naturellement à votre établissement.",
-        "desc": "Chaque point de contact peut être personnalisé pour offrir une expérience cohérente avec votre image de marque.",
-        "test_colors": "Testez vos couleurs :",
-        "bullets": [
+      customization: {
+        eyebrow: "VOTRE IDENTITÉ VISUELLE",
+        title: "Une solution qui s'intègre naturellement à votre établissement.",
+        desc: "Chaque point de contact peut être personnalisé pour offrir une expérience cohérente avec votre image de marque.",
+        test_colors: "Testez vos couleurs :",
+        bullets: [
           "Logo et couleurs de votre organisation",
           "Écrans d'accueil personnalisés",
           "Tickets imprimés selon votre identité",
@@ -306,27 +320,27 @@ const resources = {
           "Annonces vocales configurables",
           "QR codes et informations additionnelles sur les tickets"
         ],
-        "cta": "Voir les options de personnalisation",
-        "mockup": {
-          "lang": "FR",
-          "service1": "Service 1",
-          "service2": "Service 2",
-          "service3": "Service 3",
-          "ticket_service": "Service Client",
-          "counter": "Guichet",
-          "ticker": "Veuillez préparer votre pièce d'identité.",
-          "ticket_footer": "Bienvenue"
+        cta: "Voir les options de personnalisation",
+        mockup: {
+          lang: "FR",
+          service1: "Service 1",
+          service2: "Service 2",
+          service3: "Service 3",
+          ticket_service: "Service Client",
+          counter: "Guichet",
+          ticker: "Veuillez préparer votre pièce d'identité.",
+          ticket_footer: "Bienvenue"
         }
       },
-      "cards": {
-        "c1_title": "Configuration sur mesure",
-        "c1_desc": "Créez des services, des catégories personnalisées et définissez des règles de priorité parfaitement adaptées à votre flux d'accueil.",
-        "c2_title": "Gestion des visiteurs",
-        "c2_desc": "Appelez, mettez en pause ou transférez facilement un visiteur vers un autre service en un clic, sans jamais perdre le contexte du ticket.",
-        "c3_title": "Supervision en direct",
-        "c3_desc": "Visualisez en temps réel l'état de toutes vos files actives, et affectez dynamiquement vos agents selon l'affluence de chaque guichet.",
-        "c4_title": "Traçabilité complète",
-        "c4_desc": "Conservez un journal détaillé de chaque interaction. Analysez l'historique complet pour optimiser vos opérations et réduire les temps d'attente."
+      cards: {
+        c1_title: "Configuration sur mesure",
+        c1_desc: "Créez des services, des catégories personnalisées et définissez des règles de priorité parfaitement adaptées à votre flux d'accueil.",
+        c2_title: "Gestion des visiteurs",
+        c2_desc: "Appelez, mettez en pause ou transférez facilement un visiteur vers un autre service en un clic, sans jamais perdre le contexte du ticket.",
+        c3_title: "Supervision en direct",
+        c3_desc: "Visualisez en temps réel l'état de toutes vos files actives, et affectez dynamiquement vos agents selon l'affluence de chaque guichet.",
+        c4_title: "Traçabilité complète",
+        c4_desc: "Conservez un journal détaillé de chaque interaction. Analysez l'historique complet pour optimiser vos opérations et réduire les temps d'attente."
       }
     }
   },
@@ -375,6 +389,20 @@ const resources = {
         eyebrow: "ONE SYSTEM, MULTIPLE INTERFACES",
         title: "Flexible architecture tailored to your organization.",
         desc: "Ignite QMS adapts to your environment, whether you use a touch kiosk, a desktop, a tablet, or a display screen.",
+        panelA: {
+          top: "Your Company",
+          bottom: "Entry2Exit Workflow",
+          title: "Modern workplace reimagined"
+        },
+        panelB: {
+          title: "Every device, one platform"
+        },
+        panelC: {
+          title: "Built for flow"
+        },
+        panelD: {
+          title: "Industry leading performance"
+        },
         bullets: [
           "Touch kiosks with ticket printing",
           "Interfaces adapted for agents and admins",
@@ -619,16 +647,16 @@ const resources = {
           total_tickets: "TOTAL TICKETS"
         }
       },
-      "clients": {
-        "title": "Trusted by leading organizations",
-        "subtitle": "Companies, public institutions, and international organizations use Ignite QMS to modernize their visitor reception."
+      clients: {
+        title: "Trusted by leading organizations",
+        subtitle: "Companies, public institutions, and international organizations use Ignite QMS to modernize their visitor reception."
       },
-      "customization": {
-        "eyebrow": "YOUR VISUAL IDENTITY",
-        "title": "A solution that integrates naturally into your establishment.",
-        "desc": "Every touchpoint can be customized to provide a consistent experience with your brand image.",
-        "test_colors": "Test your colors:",
-        "bullets": [
+      customization: {
+        eyebrow: "YOUR VISUAL IDENTITY",
+        title: "A solution that integrates naturally into your establishment.",
+        desc: "Every touchpoint can be customized to provide a consistent experience with your brand image.",
+        test_colors: "Test your colors:",
+        bullets: [
           "Your organization's logo and colors",
           "Custom welcome screens",
           "Tickets printed with your identity",
@@ -637,27 +665,27 @@ const resources = {
           "Configurable voice announcements",
           "QR codes and additional information on tickets"
         ],
-        "cta": "See customization options",
-        "mockup": {
-          "lang": "EN",
-          "service1": "Service 1",
-          "service2": "Service 2",
-          "service3": "Service 3",
-          "ticket_service": "Customer Service",
-          "counter": "Counter",
-          "ticker": "Please prepare your ID.",
-          "ticket_footer": "Welcome"
+        cta: "See customization options",
+        mockup: {
+          lang: "EN",
+          service1: "Service 1",
+          service2: "Service 2",
+          service3: "Service 3",
+          ticket_service: "Customer Service",
+          counter: "Counter",
+          ticker: "Please prepare your ID.",
+          ticket_footer: "Welcome"
         }
       },
-      "cards": {
-        "c1_title": "Custom Configuration",
-        "c1_desc": "Create services, custom categories, and define priority rules perfectly tailored to your visitor flow.",
-        "c2_title": "Visitor Management",
-        "c2_desc": "Call, pause, or easily transfer a visitor to another service with a single click, without ever losing the ticket context.",
-        "c3_title": "Live Supervision",
-        "c3_desc": "View the real-time status of all your active queues, and dynamically assign agents based on the traffic at each counter.",
-        "c4_title": "Complete Traceability",
-        "c4_desc": "Keep a detailed log of every interaction. Analyze the full history to optimize your operations and reduce wait times."
+      cards: {
+        c1_title: "Custom Configuration",
+        c1_desc: "Create services, custom categories, and define priority rules perfectly tailored to your visitor flow.",
+        c2_title: "Visitor Management",
+        c2_desc: "Call, pause, or easily transfer a visitor to another service with a single click, without ever losing the ticket context.",
+        c3_title: "Live Supervision",
+        c3_desc: "View the real-time status of all your active queues, and dynamically assign agents based on the traffic at each counter.",
+        c4_title: "Complete Traceability",
+        c4_desc: "Keep a detailed log of every interaction. Analyze the full history to optimize your operations and reduce wait times."
       }
     }
   },
@@ -706,6 +734,20 @@ const resources = {
         eyebrow: "نظام واحد، واجهات متعددة",
         title: "بنية مرنة تتكيف مع مؤسستك.",
         desc: "يتكيف نظام Ignite QMS مع بيئتك، سواء كنت تستخدم كشكاً تفاعلياً، أو حاسوباً، أو جهازاً لوحياً، أو شاشة عرض.",
+        panelA: {
+          top: "مؤسستك",
+          bottom: "مسار Entry2Exit",
+          title: "رؤية جديدة لبيئة العمل"
+        },
+        panelB: {
+          title: "كل جهاز، منصة واحدة"
+        },
+        panelC: {
+          title: "مصمم للسلاسة"
+        },
+        panelD: {
+          title: "أداء رائد في القطاع"
+        },
         bullets: [
           "أكشاك تفاعلية مع طباعة التذاكر",
           "واجهات مخصصة للموظفين والإداريين",
@@ -950,16 +992,16 @@ const resources = {
           total_tickets: "إجمالي التذاكر"
         }
       },
-      "clients": {
-        "title": "تثق بنا مؤسسات رائدة",
-        "subtitle": "تستخدم الشركات والمؤسسات العامة والمنظمات الدولية نظام Ignite QMS لتحديث استقبال زوارها."
+      clients: {
+        title: "تثق بنا مؤسسات رائدة",
+        subtitle: "تستخدم الشركات والمؤسسات العامة والمنظمات الدولية نظام Ignite QMS لتحديث استقبال زوارها."
       },
-      "customization": {
-        "eyebrow": "هويتك البصرية",
-        "title": "حل يندمج بشكل طبيعي في مؤسستك.",
-        "desc": "يمكن تخصيص كل نقطة اتصال لتقديم تجربة متسقة مع صورة علامتك التجارية.",
-        "test_colors": "جرب ألوانك:",
-        "bullets": [
+      customization: {
+        eyebrow: "هويتك البصرية",
+        title: "حل يندمج بشكل طبيعي في مؤسستك.",
+        desc: "يمكن تخصيص كل نقطة اتصال لتقديم تجربة متسقة مع صورة علامتك التجارية.",
+        test_colors: "جرب ألوانك:",
+        bullets: [
           "شعار وألوان مؤسستك",
           "شاشات ترحيب مخصصة",
           "تذاكر مطبوعة بهويتك",
@@ -968,27 +1010,27 @@ const resources = {
           "إعلانات صوتية قابلة للتكوين",
           "رموز الاستجابة السريعة ومعلومات إضافية على التذاكر"
         ],
-        "cta": "اطلع على خيارات التخصيص",
-        "mockup": {
-          "lang": "AR",
-          "service1": "الخدمة 1",
-          "service2": "الخدمة 2",
-          "service3": "الخدمة 3",
-          "ticket_service": "خدمة العملاء",
-          "counter": "الشباك",
-          "ticker": "يرجى تحضير بطاقة هويتك.",
-          "ticket_footer": "مرحباً"
+        cta: "اطلع على خيارات التخصيص",
+        mockup: {
+          lang: "AR",
+          service1: "الخدمة 1",
+          service2: "الخدمة 2",
+          service3: "الخدمة 3",
+          ticket_service: "خدمة العملاء",
+          counter: "الشباك",
+          ticker: "يرجى تحضير بطاقة هويتك.",
+          ticket_footer: "مرحباً"
         }
       },
-      "cards": {
-        "c1_title": "تكوين مخصص",
-        "c1_desc": "قم بإنشاء خدمات وفئات مخصصة وتحديد قواعد الأولوية المصممة خصيصًا لتناسب تدفق زوارك.",
-        "c2_title": "إدارة الزوار",
-        "c2_desc": "قم باستدعاء أو إيقاف مؤقت أو تحويل الزائر بسهولة إلى خدمة أخرى بنقرة واحدة، دون فقدان سياق التذكرة.",
-        "c3_title": "إشراف مباشر",
-        "c3_desc": "اعرض الحالة في الوقت الفعلي لجميع طوابيرك النشطة، وقم بتعيين الوكلاء ديناميكيًا بناءً على الازدحام في كل شباك.",
-        "c4_title": "تتبع كامل",
-        "c4_desc": "احتفظ بسجل مفصل لكل تفاعل. قم بتحليل السجل الكامل لتحسين عملياتك وتقليل أوقات الانتظار."
+      cards: {
+        c1_title: "تكوين مخصص",
+        c1_desc: "قم بإنشاء خدمات وفئات مخصصة وتحديد قواعد الأولوية المصممة خصيصًا لتناسب تدفق زوارك.",
+        c2_title: "إدارة الزوار",
+        c2_desc: "قم باستدعاء أو إيقاف مؤقت أو تحويل الزائر بسهولة إلى خدمة أخرى بنقرة واحدة، دون فقدان سياق التذكرة.",
+        c3_title: "إشراف مباشر",
+        c3_desc: "اعرض الحالة في الوقت الفعلي لجميع طوابيرك النشطة، وقم بتعيين الوكلاء ديناميكيًا بناءً على الازدحام في كل شباك.",
+        c4_title: "تتبع كامل",
+        c4_desc: "احتفظ بسجل مفصل لكل تفاعل. قم بتحليل السجل الكامل لتحسين عملياتك وتقليل أوقات الانتظار."
       }
     }
   }

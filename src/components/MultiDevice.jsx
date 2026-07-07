@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FiX, FiCheckCircle } from 'react-icons/fi';
+import { FiX, FiCheckCircle, FiUsers, FiGrid } from 'react-icons/fi';
 import './MultiDevice.css';
 
 import KioskImg from '../assets/materiel/Kiosk 1.png';
 import DesktopImg from '../assets/materiel/Dashboard.png';
 import MobileImg from '../assets/materiel/Ecran.png';
-// NOTE: guessed filename to follow the same convention as the other three.
-// If this isn't the real file in your assets/materiel folder, just tell me
-// the correct name and I'll fix this one import line.
 import GuichetImg from '../assets/materiel/Guichet.png';
 
 const MultiDevice = () => {
@@ -17,15 +14,6 @@ const MultiDevice = () => {
 
   const rawBullets = t('architecture.bullets', { returnObjects: true });
   const bullets = Array.isArray(rawBullets) ? rawBullets : [];
-
-  // Each card pairs a real product image with the existing translated
-  // bullet that best matches it, so no new copy/i18n keys are needed.
-  const cards = [
-    { img: KioskImg, alt: 'Kiosk', caption: bullets[0] },
-    { img: DesktopImg, alt: 'Dashboard', caption: bullets[1] },
-    { img: MobileImg, alt: 'Display screen', caption: bullets[2] },
-    { img: GuichetImg, alt: 'Counter display', caption: bullets[4] || t('materiel.guichet.title') },
-  ];
 
   return (
     <section className="multi-device-section" id="architecture">
@@ -43,20 +31,65 @@ const MultiDevice = () => {
           </p>
         </div>
 
-        <div className="md-card-grid">
-          {cards.map((card, i) => (
-            <div
-              className="md-photo-card"
-              key={i}
-              data-aos="fade-up"
-              data-aos-delay={i * 100}
-            >
-              <img src={card.img} alt={card.alt} className="md-photo-card-img" />
-              <div className="md-photo-card-overlay">
-                <span>{card.caption}</span>
+        <div className="md-bento" data-aos="fade-up" data-aos-delay="300">
+
+          {/* --- Panel A: white, Kiosk photo dominant --- */}
+          <div className="md-panel md-panel--white">
+            <div className="md-panel-photo md-panel-photo--kiosk">
+              <img src={KioskImg} alt="Kiosk" />
+              <div className="md-flow-badge">
+                <FiUsers className="md-flow-badge-icon" />
+                <span className="md-flow-badge-arrow">→</span>
+                <FiGrid className="md-flow-badge-icon" />
               </div>
             </div>
-          ))}
+            <div className="md-panel-copy">
+              <h3 className="md-panel-title">{t('architecture.panelA.title', 'Modern Workplace Reimagined')}</h3>
+              <p className="md-panel-text">{bullets[0] || t('architecture.desc')}</p>
+            </div>
+          </div>
+
+          {/* --- Panel B: navy, Dashboard photo dominant --- */}
+          <div className="md-panel md-panel--dark">
+            <div className="md-panel-photo md-panel-photo--dashboard">
+              <img src={DesktopImg} alt="Dashboard" />
+            </div>
+            <div className="md-panel-copy">
+              <h3 className="md-panel-title md-panel-title--light">
+                {t('architecture.panelB.title', 'Every Device, One Platform')}
+              </h3>
+              <p className="md-panel-text md-panel-text--light">
+                {bullets[1] || t('architecture.desc')}
+              </p>
+            </div>
+          </div>
+
+          {/* --- Panel C: green, Mobile photo dominant --- */}
+          <div className="md-panel md-panel--green">
+            <div className="md-panel-photo md-panel-photo--mobile">
+              <img src={MobileImg} alt="Display screen" />
+            </div>
+            <div className="md-panel-copy">
+              <h3 className="md-panel-title">{t('architecture.panelC.title', 'Built for Flow')}</h3>
+              <p className="md-panel-text">{bullets[2] || t('architecture.desc')}</p>
+            </div>
+          </div>
+
+          {/* --- Panel D: pink, Guichet photo dominant --- */}
+          <div className="md-panel md-panel--pink">
+            <div className="md-panel-photo md-panel-photo--guichet">
+              <img src={GuichetImg} alt="Counter display" />
+            </div>
+            <div className="md-panel-copy">
+              <h3 className="md-panel-title md-panel-title--light">
+                {t('architecture.panelD.title', 'Industry Leading Performance')}
+              </h3>
+              <p className="md-panel-text md-panel-text--light">
+                {bullets[3] || t('architecture.desc')}
+              </p>
+            </div>
+          </div>
+
         </div>
 
         <div className="md-cta-wrap" data-aos="fade-up" data-aos-delay="400">
@@ -72,10 +105,8 @@ const MultiDevice = () => {
             <button className="md-modal-close" onClick={() => setIsModalOpen(false)}>
               <FiX />
             </button>
-
             <h3 className="md-modal-title">{t('architecture.modal.title')}</h3>
             <p className="md-modal-text">{t('architecture.modal.text')}</p>
-
             <ul className="md-modal-highlights">
               {t('architecture.modal.highlights', { returnObjects: true }).map((h, i) => (
                 <li key={i} className="md-modal-highlight-item">
