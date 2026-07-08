@@ -44,7 +44,7 @@ const PageTransitionWrapper = ({ children }) => {
 };
 
 const Home = () => (
-  <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', paddingBottom: '70px' }}>
+  <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
     <Navbar />
     
     <main style={{ flex: 1 }}> 
