@@ -1,6 +1,7 @@
 .sec7-advanced-control {
   padding: 5rem 2rem;
-  background: linear-gradient(135deg, #1a1613 0%, #504e4e 60%);
+  background-image: url("../assets/materiel/Background3.jpg");
+  background-size: auto;
   overflow: hidden;
 }
 
@@ -49,14 +50,14 @@
 
 .sec7-title {
   font-size: 2.25rem;
-  color: var(--qms-dark);
+  color: #ffffff;
   margin-bottom: 1rem;
   line-height: 1.2;
 }
 
 .sec7-description {
   font-size: 1.125rem;
-  color: var(--qms-dark);
+  color: #ffffff;
   opacity: 0.8;
   margin-bottom: 2rem;
   line-height: 1.6;

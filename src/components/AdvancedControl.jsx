@@ -90,15 +90,6 @@ const AdvancedControl = () => {
                 </div>
               ))}
             </div>
-
-            <button 
-              className="sec7-btn" 
-              onClick={toggleModal}
-              data-aos="fade-up"
-              data-aos-delay="600"
-            >
-              {t('queue_control.cta', 'Découvrir les fonctionnalités')}
-            </button>
           </div>
 
         </div>

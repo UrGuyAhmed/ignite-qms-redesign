@@ -1,10 +1,11 @@
 .how-section {
   padding: 100px 20px;
-  background: linear-gradient(135deg, #bdbab8 0%, #535353 60%);
+  background-image: url("../assets/materiel/Background3.jpg");
+  background-size: auto;
 }
 
 .how-container {
-  max-width: 1400px; /* Wider to fit 5 steps horizontally */
+  max-width: 1400px; 
   margin: 0 auto;
 }
 
@@ -24,7 +25,7 @@
 }
 
 .how-title {
-  color: #333333;
+  color: #ffffff;
   font-size: 2.5rem;
   font-weight: 800;
 }

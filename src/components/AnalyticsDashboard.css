@@ -4,7 +4,8 @@
 
 .ad-section {
   padding: 5rem 2rem;
-  background-color: #ffffff;
+  background-image: url("../assets/materiel/background2.png");
+  background-size: auto;
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -57,14 +58,14 @@
 .ad-title {
   font-size: 2.25rem;
   font-weight: 800;
-  color: #0E0D1F;
+  color: #ffffff;
   margin: 0 0 1rem 0;
   line-height: 1.2;
 }
 
 .ad-desc {
   font-size: 1.05rem;
-  color: #555;
+  color: #cfcfe7;
   margin: 0 0 1.75rem 0;
   line-height: 1.6;
 }
@@ -86,7 +87,7 @@
   align-items: flex-start;
   gap: 0.5rem;
   font-size: 0.95rem;
-  color: #0E0D1F;
+  color: #ffffff;
 }
 
 .ad-check-icon {
