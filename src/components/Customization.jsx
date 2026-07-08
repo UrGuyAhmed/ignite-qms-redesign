@@ -3,9 +3,19 @@ import { useTranslation } from 'react-i18next';
 import { FiCheck, FiSliders } from 'react-icons/fi';
 import './Customization.css';
 
+// Converts a hex color to an rgba string so we can build a soft tint
+// (e.g. '#FF7F11' + 0.08 -> 'rgba(255, 127, 17, 0.08)')
+const hexToRgba = (hex, alpha) => {
+  const parsed = hex.replace('#', '');
+  const r = parseInt(parsed.substring(0, 2), 16);
+  const g = parseInt(parsed.substring(2, 4), 16);
+  const b = parseInt(parsed.substring(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+};
+
 const Customization = () => {
   const { t } = useTranslation();
-  
+
   const colorThemes = [
     { id: 'orange', hex: '#FF7F11', name: 'Ignite Orange' },
     { id: 'blue', hex: '#00ABE7', name: 'Corporate Blue' },
@@ -15,11 +25,19 @@ const Customization = () => {
   const [activeTheme, setActiveTheme] = useState(colorThemes[0]);
   const bullets = t('customization.bullets', { returnObjects: true }) || [];
 
+  const sectionBackground = {
+    background: `linear-gradient(135deg, ${hexToRgba(activeTheme.hex, 0.12)} 0%, #ffffff 60%)`
+  };
+
   return (
-    <section className="customization-section" id="customization">
+    <section
+      className="customization-section"
+      id="customization"
+      style={sectionBackground}
+    >
       <div className="container">
         <div className="customization-grid">
-          
+
           {/* Left Side: Text & Swatches */}
           <div className="customization-content">
             <span className="eyebrow" data-aos="fade-up">
@@ -31,7 +49,7 @@ const Customization = () => {
             <p className="description" data-aos="fade-up" data-aos-delay="200">
               {t('customization.desc')}
             </p>
-            
+
             <div className="theme-selector" data-aos="fade-up" data-aos-delay="300">
               <span className="theme-label">{t('customization.test_colors', 'Testez vos couleurs :')}</span>
               <div className="swatch-container">
@@ -49,10 +67,10 @@ const Customization = () => {
 
             <ul className="feature-list">
               {bullets.map((bullet, index) => (
-                <li 
+                <li
                   key={index}
                   data-aos="fade-up"
-                  data-aos-delay={400 + index * 100} 
+                  data-aos-delay={400 + index * 100}
                 >
                   <FiCheck className="check-icon" style={{ color: activeTheme.hex }} />
                   <span>{bullet}</span>
@@ -60,11 +78,12 @@ const Customization = () => {
               ))}
             </ul>
 
-            <a 
+            {/* FIX 1: Added the missing `<a` here */}
+            <a
               href="#contacts"
-              className="btn-primary" 
-              style={{ 
-                backgroundColor: activeTheme.hex, 
+              className="btn-primary"
+              style={{
+                backgroundColor: activeTheme.hex,
                 textDecoration: 'none',
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -78,9 +97,9 @@ const Customization = () => {
             </a>
           </div>
 
-          {/* Right Side: Interactive Mockups (NOW FULLY TRANSLATED) */}
+          {/* Right Side: Interactive Mockups */}
           <div className="customization-visuals">
-            
+
             {/* Mockup 1: Kiosk Interface */}
             <div className="mockup-kiosk card-shadow" data-aos="fade-left" data-aos-delay="200">
               <div className="kiosk-header" style={{ backgroundColor: activeTheme.hex }}>

@@ -1,6 +1,6 @@
 .customization-section {
   padding: 5rem 2rem;
-  background-color: #fafafa;
+  background: linear-gradient(135deg, #FFF6EE 0%, #ffffff 60%);
   overflow: hidden;
 }
 

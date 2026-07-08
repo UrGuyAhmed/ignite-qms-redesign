@@ -1,6 +1,6 @@
 .sec7-advanced-control {
   padding: 5rem 2rem;
-  background-color: var(--qms-white);
+  background: linear-gradient(135deg, #1a1613 0%, #504e4e 60%);
   overflow: hidden;
 }
 
@@ -63,7 +63,7 @@
 }
 
 /* =========================================
-   NEW 2x2 RICH CARDS STYLING
+   2x2 RICH CARDS STYLING
    ========================================= */
 .sec7-rich-cards {
   display: grid;
@@ -114,6 +114,51 @@
   color: #4a5568;
   margin: 0;
   line-height: 1.6;
+}
+
+/* --- Card color variants: same palette as the bento cards --- */
+.sec7-rich-card:nth-child(1) {
+  background-color: var(--qms-white, #ffffff);
+}
+
+.sec7-rich-card:nth-child(2) {
+  background-color: var(--qms-dark, #0E0D1F);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+.sec7-rich-card:nth-child(2) .sec7-card-icon-wrapper {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+.sec7-rich-card:nth-child(2) .sec7-card-text h4 { color: #ffffff; }
+.sec7-rich-card:nth-child(2) .sec7-card-text p { color: rgba(255, 255, 255, 0.7); }
+
+.sec7-rich-card:nth-child(3) {
+  background-color: var(--qms-orange, #FF7F11);
+  border-color: transparent;
+}
+.sec7-rich-card:nth-child(3) .sec7-card-icon-wrapper {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+.sec7-rich-card:nth-child(3) .sec7-card-text h4 { color: #ffffff; }
+.sec7-rich-card:nth-child(3) .sec7-card-text p { color: rgba(255, 255, 255, 0.85); }
+
+.sec7-rich-card:nth-child(4) {
+  background-color: #F53D31;
+  border-color: transparent;
+}
+.sec7-rich-card:nth-child(4) .sec7-card-icon-wrapper {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+.sec7-rich-card:nth-child(4) .sec7-card-text h4 { color: #ffffff; }
+.sec7-rich-card:nth-child(4) .sec7-card-text p { color: rgba(255, 255, 255, 0.85); }
+
+/* Hover border stays consistent across variants */
+.sec7-rich-card:nth-child(2):hover,
+.sec7-rich-card:nth-child(3):hover,
+.sec7-rich-card:nth-child(4):hover {
+  border-color: var(--qms-orange, #FF7F11);
 }
 /* ========================================= */
 
