@@ -9,7 +9,7 @@ const FloatingActions = () => {
 
   // Updated with the actual contact details from your Footer
   const whatsappNumber = "213000000000"; 
-  const phoneNumber = "tel:+213770625655";
+  const phoneNumber = "tel:+213000000000";
 
   return (
     <>
