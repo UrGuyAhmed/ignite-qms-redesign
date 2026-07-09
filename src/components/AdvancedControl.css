@@ -208,9 +208,64 @@
   }
 }
 
-@media (max-width: 600px) {
+/* MOBILE: horizontal cards, image moved to the end, auto-scrolling marquee */
+@media (max-width: 767px) {
+  .sec7-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Text content comes first and takes full width */
+  .sec7-content {
+    order: 1;
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  /* Image moves to the end */
+  .sec7-visual {
+    order: 2;
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-top: 2.5rem;
+  }
+
+  /* Cards auto-scroll in an infinite marquee */
   .sec7-rich-cards {
-    grid-template-columns: 1fr; /* Stacks to 1 column on small phones */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: max-content;
+    margin: 0 0 2.5rem;
+    animation: sec7-marquee 22s linear infinite;
+  }
+
+  .sec7-rich-cards:hover,
+  .sec7-rich-cards:active {
+    animation-play-state: paused;
+  }
+
+  .sec7-rich-card {
+    flex: 0 0 78vw;
+    max-width: 78vw;
+  }
+
+  @keyframes sec7-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* Image sized to match a card's width, centered */
+  .sec7-image-wrapper {
+    width: 82%;
+    margin: 0 auto;
+  }
+}
+
+/* Hide the duplicated card set outside mobile so desktop's 2x2 grid stays intact */
+@media (min-width: 768px) {
+  .sec7-rich-card[aria-hidden="true"] {
+    display: none;
   }
 }
 

@@ -71,14 +71,15 @@ const AdvancedControl = () => {
               {t('queue_control.desc', "Organisez vos visiteurs efficacement, réduisez les files physiques et améliorez la répartition de la charge entre vos équipes.")}
             </p>
             
-            {/* The New 2x2 Card Grid */}
+            {/* The New 2x2 Card Grid (duplicated for seamless mobile marquee) */}
             <div className="sec7-rich-cards">
-              {featureCards.map((card, index) => (
+              {[...featureCards, ...featureCards].map((card, index) => (
                 <div 
                   key={index}
                   className="sec7-rich-card"
-                  data-aos="fade-up"
-                  data-aos-delay={300 + index * 100}
+                  aria-hidden={index >= featureCards.length}
+                  data-aos={index < featureCards.length ? "fade-up" : undefined}
+                  data-aos-delay={index < featureCards.length ? 300 + index * 100 : undefined}
                 >
                   <div className="sec7-card-icon-wrapper">
                     {card.icon}

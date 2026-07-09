@@ -47,8 +47,8 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Column 3: Demandez une Démo Form (Fades up third with a 300ms delay) */}
-        <div className="footer__column" data-aos="fade-up" data-aos-delay="300">
+        {/* Column 3: Demandez une Démo Form - ADDED demo-request-wrapper HERE */}
+        <div className="footer__column demo-request-wrapper" data-aos="fade-up" data-aos-delay="300">
           <h4 className="footer__demo-title">{t('footer.demo_title')}</h4>
           
           <form className="demo-form" onSubmit={(e) => e.preventDefault()}>

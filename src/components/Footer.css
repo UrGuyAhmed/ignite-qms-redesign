@@ -45,7 +45,7 @@
 .demo-textarea {
   width: 100%;
   padding: 0.85rem 1rem;
-  border: none; /* Fixed the missing semicolon here! */
+  border: none;
   border-radius: 4px;
   font-family: inherit;
   font-size: 0.95rem;
@@ -107,13 +107,6 @@
   color: #718096;
 }
 
-@media (max-width: 768px) {
-  .footer__container {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-}
-
 .footer__socials {
   display: flex;
   gap: 1.25rem;
@@ -131,4 +124,21 @@
 .footer__socials a:hover {
   color: #FF6A00; 
   transform: translateY(-2px); 
+}
+
+/* =========================================
+   MOBILE RESPONSIVE UPDATES
+   ========================================= */
+@media (max-width: 768px) {
+  .footer__container {
+    /* Switch from Grid to Flexbox on mobile so we can easily reorder items */
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  /* This forces the form to jump to the very top of the flex container */
+  .demo-request-wrapper {
+    order: -1;
+  }
 }
