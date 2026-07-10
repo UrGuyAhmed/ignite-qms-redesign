@@ -18,7 +18,14 @@ const Footer = () => {
           </p>
           <div className="footer__contact-info">
             <p><strong>{t('footer.address_label')}</strong> {t('footer.address_value')}</p>
-            <p><strong>{t('footer.phone_label')}</strong> <a href="tel:+213770625655">+213 770 625 655</a></p>
+            <p>
+              <strong>{t('footer.phone_label')}</strong>{' '}
+              <a href="tel:+213770615655">+213 770 615 655</a> / <a href="tel:+213770986528">+213 770 986 528</a>
+            </p>
+            <p>
+              <strong>{t('footer.address_setif_label', 'Sétif:')}</strong>{' '}
+              <a href="tel:+213770301294">+213 770 301 294</a> / <a href="tel:+213770261410">+213 770 261 410</a>
+            </p>
             <p><strong>{t('footer.email_label')}</strong> <a href="mailto:info@igniteae.com">info@igniteae.com</a></p>
           </div>
           

@@ -7,9 +7,9 @@ import './FloatingActions.css';
 const FloatingActions = () => {
   const { t } = useTranslation();
 
-  // Updated with the actual contact details from your Footer
-  const whatsappNumber = "213000000000"; 
-  const phoneNumber = "tel:+213000000000";
+  // Primary contact: Alger office
+  const whatsappNumber = "213770615655"; 
+  const phoneNumber = "tel:+213770615655";
 
   return (
     <>

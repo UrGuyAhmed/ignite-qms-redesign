@@ -159,9 +159,9 @@ const Navbar = () => {
               {t('cta.demo')}
             </a>
 
-            <a href="tel:+213770625655" className="contact-link">📞 +213 770 625 655</a>
+            <a href="tel:+213770615655" className="contact-link">📞 +213 770 615 655</a>
             <a href="mailto:info@igniteae.com" className="contact-link">✉️ info@igniteae.com</a>
-            <a href="https://wa.me/213770625655" className="btn btn--primary" style={{ backgroundColor: '#25D366', marginTop: '0.5rem', textAlign: 'center' }}>WhatsApp</a>
+            <a href="https://wa.me/213770615655" className="btn btn--primary" style={{ backgroundColor: '#25D366', marginTop: '0.5rem', textAlign: 'center' }}>WhatsApp</a>
           </div>
         </div>
         <div className="drawer-overlay" onClick={() => setIsDrawerOpen(false)}></div>

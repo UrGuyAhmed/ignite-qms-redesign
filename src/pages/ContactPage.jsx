@@ -41,11 +41,32 @@ const ContactPage = () => {
               <p>{t('contact_page.support_desc')}</p>
               
               <div className="support-cards">
-                <a href="tel:+213000000000" className="support-card">
+                <a href="tel:+213770615655" className="support-card">
                   <span className="icon phone-icon">📞</span>
                   <div>
-                    <strong>{t('contact_page.phone_label')}</strong>
-                    <span>+213 770 625 655</span>
+                    <strong>Alger</strong>
+                    <span>+213 770 615 655</span>
+                  </div>
+                </a>
+                <a href="tel:+213770986528" className="support-card">
+                  <span className="icon phone-icon">📞</span>
+                  <div>
+                    <strong>Alger</strong>
+                    <span>+213 770 986 528</span>
+                  </div>
+                </a>
+                <a href="tel:+213770301294" className="support-card">
+                  <span className="icon phone-icon">📞</span>
+                  <div>
+                    <strong>Sétif</strong>
+                    <span>+213 770 301 294</span>
+                  </div>
+                </a>
+                <a href="tel:+213770261410" className="support-card">
+                  <span className="icon phone-icon">📞</span>
+                  <div>
+                    <strong>Sétif</strong>
+                    <span>+213 770 261 410</span>
                   </div>
                 </a>
               </div>
