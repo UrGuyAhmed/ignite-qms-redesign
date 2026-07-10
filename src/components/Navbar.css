@@ -80,6 +80,32 @@
   color: var(--primary-dark); 
 }
 
+/* --- Secondary Button (Contact Us) --- */
+.navbar .btn.btn--secondary {
+  color: var(--primary-white);
+  border: 1px solid var(--primary-white);
+  background-color: transparent;
+  transition: all var(--transition-speed) ease;
+}
+
+.navbar .btn.btn--secondary:hover {
+  background-color: var(--primary-white);
+  color: var(--primary-dark);
+}
+
+/* Mobile drawer version: dark text on white drawer background */
+.mobile-drawer__contact .btn.btn--secondary {
+  color: var(--primary-dark);
+  border: 1px solid var(--primary-dark);
+  background-color: transparent;
+  transition: all var(--transition-speed) ease;
+}
+
+.mobile-drawer__contact .btn.btn--secondary:hover {
+  background-color: var(--primary-dark);
+  color: var(--primary-white);
+}
+
 /* --- Primary Button --- */
 .navbar .btn.btn--primary {
   background-color: var(--primary-orange);

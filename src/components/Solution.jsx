@@ -36,8 +36,7 @@ const Solution = () => {
             </p>
             
             <div className="hero-actions" data-aos="fade-up" data-aos-delay="300">
-              <button className="btn-primary">{t('hero.cta_primary', "Tester la démo gratuitement")}</button>
-              <button className="btn-secondary dark-mode-btn">{t('hero.cta_secondary', "Demander une présentation")}</button>
+              <a href="#contacts" className="btn-primary">{t('hero.cta_primary', "Demander une démo")}</a>
             </div>
 
             <div className="hero-trust" data-aos="fade-up" data-aos-delay="400">

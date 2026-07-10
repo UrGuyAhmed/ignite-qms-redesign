@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { FR, GB, DZ } from 'country-flag-icons/react/3x2';
 import QMSLogo from '../assets/logo/QMSLogo.png'; 
 import './Navbar.css';
 
@@ -13,11 +14,11 @@ const Navbar = () => {
   // Safely get the current language (fallback to 'FR' if not set yet)
   const currentLang = (i18n.language || 'fr').substring(0, 2).toUpperCase();
 
-  // Flag map
+  // SVG flag components instead of emoji
   const flags = {
-    FR: '🇫🇷',
-    AR: '🇩🇿',
-    EN: '🇬🇧'
+    FR: FR,
+    AR: DZ,
+    EN: GB
   };
 
   // Handle scroll effect
@@ -43,6 +44,8 @@ const Navbar = () => {
     i18n.changeLanguage(langCode.toLowerCase());
     setIsLangOpen(false);
   };
+
+  const CurrentFlag = flags[currentLang];
 
   return (
     <>
@@ -80,24 +83,32 @@ const Navbar = () => {
                 className="lang-toggle" 
                 onClick={() => setIsLangOpen(!isLangOpen)}
               >
-                <span className="flag-icon">{flags[currentLang] || '🌍'}</span> 
+                <span className="flag-icon">
+                  {CurrentFlag && <CurrentFlag title={currentLang} style={{ width: '20px', height: '15px', borderRadius: '2px' }} />}
+                </span> 
                 <span className="arrow">▼</span>
               </button>
               
               {isLangOpen && (
                 <ul className="lang-menu">
-                  {Object.keys(flags).map(lang => (
-                    <li key={lang}>
-                      <button onClick={() => changeLanguage(lang)}>
-                        <span className="flag-icon">{flags[lang]}</span> {lang}
-                      </button>
-                    </li>
-                  ))}
+                  {Object.keys(flags).map(lang => {
+                    const FlagComp = flags[lang];
+                    return (
+                      <li key={lang}>
+                        <button onClick={() => changeLanguage(lang)}>
+                          <span className="flag-icon">
+                            <FlagComp title={lang} style={{ width: '20px', height: '15px', borderRadius: '2px' }} />
+                          </span> {lang}
+                        </button>
+                      </li>
+                    );
+                  })}
                 </ul>
               )}
             </div>
 
-            <Link to="/contact" className="btn btn--primary">{t('cta.demo')}</Link>
+            <Link to="/contact" className="btn btn--secondary">{t('nav.contact_us', 'Contact Us')}</Link>
+            <a href="/#contacts" className="btn btn--primary">{t('cta.demo')}</a>
           </div>
 
           <button className="burger-btn mobile-only" onClick={() => setIsDrawerOpen(true)}>
@@ -124,22 +135,29 @@ const Navbar = () => {
           <div className="mobile-drawer__contact">
             {/* Mobile Language Selector */}
             <div className="mobile-drawer__lang">
-              {Object.keys(flags).map((lang) => (
-                <React.Fragment key={lang}>
-                  <button 
-                    className={`lang-btn ${currentLang === lang ? 'active' : ''}`}
-                    onClick={() => changeLanguage(lang)}
-                  >
-                    {flags[lang]}
-                  </button>
-                  {lang !== 'EN' && <span className="lang-separator">|</span>}
-                </React.Fragment>
-              ))}
+              {Object.keys(flags).map((lang) => {
+                const FlagComp = flags[lang];
+                return (
+                  <React.Fragment key={lang}>
+                    <button 
+                      className={`lang-btn ${currentLang === lang ? 'active' : ''}`}
+                      onClick={() => changeLanguage(lang)}
+                    >
+                      <FlagComp title={lang} style={{ width: '22px', height: '16px', borderRadius: '2px' }} />
+                    </button>
+                    {lang !== 'EN' && <span className="lang-separator">|</span>}
+                  </React.Fragment>
+                );
+              })}
             </div>
-            
-            <Link to="/contact" className="btn btn--primary" style={{ width: '100%', textAlign: 'center', marginBottom: '1rem' }} onClick={() => setIsDrawerOpen(false)}>
-              {t('cta.demo')}
+
+            <Link to="/contact" className="btn btn--secondary" style={{ width: '100%', textAlign: 'center', marginBottom: '1rem' }} onClick={() => setIsDrawerOpen(false)}>
+              {t('nav.contact_us', 'Contact Us')}
             </Link>
+            
+            <a href="/#contacts" className="btn btn--primary" style={{ width: '100%', textAlign: 'center', marginBottom: '1rem' }} onClick={() => setIsDrawerOpen(false)}>
+              {t('cta.demo')}
+            </a>
 
             <a href="tel:+213770625655" className="contact-link">📞 +213 770 625 655</a>
             <a href="mailto:info@igniteae.com" className="contact-link">✉️ info@igniteae.com</a>

@@ -12,7 +12,8 @@ const resources = {
         sectors: "Secteurs",
         references: "Références",
         resources: "Ressources",
-        faq: "FAQ"
+        faq: "FAQ",
+        contact_us: "Contactez-nous"
       },
       cta: {
         demo: "Demander une démo",
@@ -22,7 +23,7 @@ const resources = {
         eyebrow: "SYSTÈME DE GESTION DE FILES D'ATTENTE",
         title: "Transformez chaque attente en une expérience fluide et maîtrisée.",
         subtitle: "Ignite QMS centralise l'accueil, l'orientation, l'appel des visiteurs et l'analyse de vos performances dans une solution complète, personnalisable et déployée localement en Algérie.",
-        cta_primary: "Tester la démo gratuitement",
+        cta_primary: "Demander une démo",
         cta_secondary: "Demander une présentation",
         trust_points: [
           "Solution personnalisable",
@@ -341,6 +342,29 @@ const resources = {
         c3_desc: "Visualisez en temps réel l'état de toutes vos files actives, et affectez dynamiquement vos agents selon l'affluence de chaque guichet.",
         c4_title: "Traçabilité complète",
         c4_desc: "Conservez un journal détaillé de chaque interaction. Analysez l'historique complet pour optimiser vos opérations et réduire les temps d'attente."
+      },
+      contact_page: {
+        title: "Contactez-nous",
+        subtitle: "Contactez notre équipe pour toute demande de renseignements, d'assistance ou d'opportunités de partenariat. Nous serons ravis de vous entendre.",
+        support_title: "Besoin d'aide ou d'une assistance rapide ?",
+        support_desc: "Contactez-nous instantanément via l'une des méthodes suivantes.",
+        whatsapp_label: "WhatsApp",
+        phone_label: "Téléphone",
+        form: {
+          first_name: "Prénom",
+          last_name: "Nom",
+          company: "Entreprise",
+          email: "E-mail",
+          phone: "Téléphone",
+          product: "Produit",
+          product_none: "- Aucun -",
+          product_software: "Ignite QMS Logiciel",
+          product_kiosks: "Bornes Interactives",
+          product_screens: "Écrans d'Affichage",
+          message: "Message / Demande",
+          submit: "Réserver une Démo",
+          reset: "Effacer"
+        }
       }
     }
   },
@@ -354,7 +378,8 @@ const resources = {
         sectors: "Sectors",
         references: "References",
         resources: "Resources",
-        faq: "FAQ"
+        faq: "FAQ",
+        contact_us: "Contact Us"
       },
       cta: {
         demo: "Request a demo",
@@ -364,7 +389,7 @@ const resources = {
         eyebrow: "QUEUE MANAGEMENT SYSTEM",
         title: "Transform every wait into a seamless and controlled experience.",
         subtitle: "Ignite QMS centralizes reception, orientation, visitor calling, and performance analysis into a complete, customizable solution deployed locally.",
-        cta_primary: "Try the demo for free",
+        cta_primary: "Request a demo",
         cta_secondary: "Request a presentation",
         trust_points: [
           "Customizable solution",
@@ -686,6 +711,29 @@ const resources = {
         c3_desc: "View the real-time status of all your active queues, and dynamically assign agents based on the traffic at each counter.",
         c4_title: "Complete Traceability",
         c4_desc: "Keep a detailed log of every interaction. Analyze the full history to optimize your operations and reduce wait times."
+      },
+      contact_page: {
+        title: "Contact Us",
+        subtitle: "Contact our team for any inquiries, support, or partnership opportunities. We'd love to hear from you.",
+        support_title: "Need help or quick assistance?",
+        support_desc: "Reach us instantly through one of the following methods.",
+        whatsapp_label: "WhatsApp",
+        phone_label: "Phone",
+        form: {
+          first_name: "First Name",
+          last_name: "Last Name",
+          company: "Company",
+          email: "Email",
+          phone: "Phone",
+          product: "Product",
+          product_none: "- None -",
+          product_software: "Ignite QMS Software",
+          product_kiosks: "Interactive Kiosks",
+          product_screens: "Display Screens",
+          message: "Message / Request",
+          submit: "Book a Demo",
+          reset: "Clear"
+        }
       }
     }
   },
@@ -699,7 +747,8 @@ const resources = {
         sectors: "القطاعات",
         references: "المراجع",
         resources: "الموارد",
-        faq: "الأسئلة الشائعة"
+        faq: "الأسئلة الشائعة",
+        contact_us: "اتصل بنا"
       },
       cta: {
         demo: "اطلب عرضاً",
@@ -709,7 +758,7 @@ const resources = {
         eyebrow: "نظام إدارة طوابير الانتظار",
         title: "حوّل كل انتظار إلى تجربة سلسة ومحكمة.",
         subtitle: "يقوم نظام Ignite QMS بمركزة الاستقبال والتوجيه واستدعاء الزوار وتحليل أدائك في حل متكامل وقابل للتخصيص يتم نشره محلياً في الجزائر.",
-        cta_primary: "جرب النسخة التجريبية مجاناً",
+        cta_primary: "اطلب عرضاً",
         cta_secondary: "اطلب عرضاً تقديمياً",
         trust_points: [
           "حل قابل للتخصيص",
@@ -1031,6 +1080,29 @@ const resources = {
         c3_desc: "اعرض الحالة في الوقت الفعلي لجميع طوابيرك النشطة، وقم بتعيين الوكلاء ديناميكيًا بناءً على الازدحام في كل شباك.",
         c4_title: "تتبع كامل",
         c4_desc: "احتفظ بسجل مفصل لكل تفاعل. قم بتحليل السجل الكامل لتحسين عملياتك وتقليل أوقات الانتظار."
+      },
+      contact_page: {
+        title: "اتصل بنا",
+        subtitle: "تواصل مع فريقنا لأي استفسارات أو دعم أو فرص شراكة. يسعدنا التواصل معك.",
+        support_title: "هل تحتاج إلى مساعدة سريعة؟",
+        support_desc: "تواصل معنا فورياً عبر إحدى الطرق التالية.",
+        whatsapp_label: "واتساب",
+        phone_label: "الهاتف",
+        form: {
+          first_name: "الاسم الأول",
+          last_name: "اللقب",
+          company: "الشركة",
+          email: "البريد الإلكتروني",
+          phone: "الهاتف",
+          product: "المنتج",
+          product_none: "- لا شيء -",
+          product_software: "برنامج Ignite QMS",
+          product_kiosks: "أكشاك تفاعلية",
+          product_screens: "شاشات عرض",
+          message: "الرسالة / الطلب",
+          submit: "احجز عرضاً تجريبياً",
+          reset: "مسح"
+        }
       }
     }
   }
