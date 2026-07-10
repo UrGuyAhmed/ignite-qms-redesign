@@ -20,6 +20,20 @@ const ContactPage = () => {
             <p className="contact-subtitle">
               {t('contact_page.subtitle')}
             </p>
+            
+            {/* Company location map */}
+            <div className="contact-map-wrapper">
+              <iframe
+                src="https://www.google.com/maps?q=25.1841209,55.2641901(Ignite+Future+Technologies)&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Ignite Future Technologies Location"
+              ></iframe>
+            </div>
 
             <div className="quick-support">
               <h3>{t('contact_page.support_title')}</h3>
