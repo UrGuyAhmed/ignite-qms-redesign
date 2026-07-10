@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import FloatingActions from '../components/FloatingActions';
 import './ContactPage.css';
 
 const ContactPage = () => {
@@ -24,13 +25,13 @@ const ContactPage = () => {
             {/* Company location map */}
             <div className="contact-map-wrapper">
               <iframe
-                src="https://www.google.com/maps?q=25.1841209,55.2641901(Ignite+Future+Technologies)&output=embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.0689233184503!2d3.0759401!3d36.7209059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128fad6accbe5d2f%3A0x4d43ee212e499157!2sSarl%20CECi!5e0!3m2!1sen!2sdz!4v1783673540568!5m2!1sen!2sdz"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerPolicy="strict-origin-when-cross-origin"
                 title="Ignite Future Technologies Location"
               ></iframe>
             </div>
@@ -40,13 +41,6 @@ const ContactPage = () => {
               <p>{t('contact_page.support_desc')}</p>
               
               <div className="support-cards">
-                <a href="https://wa.me/213000000000" className="support-card">
-                  <span className="icon whatsapp-icon">💬</span>
-                  <div>
-                    <strong>{t('contact_page.whatsapp_label')}</strong>
-                    <span>+213 770 625 655</span>
-                  </div>
-                </a>
                 <a href="tel:+213000000000" className="support-card">
                   <span className="icon phone-icon">📞</span>
                   <div>
@@ -95,6 +89,7 @@ const ContactPage = () => {
                     <option>{t('contact_page.form.product_software')}</option>
                     <option>{t('contact_page.form.product_kiosks')}</option>
                     <option>{t('contact_page.form.product_screens')}</option>
+                    <option>{t('contact_page.form.product_other')}</option>
                   </select>
                 </div>
 
@@ -115,6 +110,7 @@ const ContactPage = () => {
       </main>
 
       <Footer />
+      <FloatingActions />
     </div>
   );
 };
