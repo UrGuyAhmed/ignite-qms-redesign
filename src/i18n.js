@@ -741,7 +741,7 @@ const resources = {
   ar: {
     translation: {
       nav: {
-        solution: "الحل",
+        solution: "الحلول",
         features: "الميزات",
         hardware: "المعدات",
         sectors: "القطاعات",
