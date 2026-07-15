@@ -1,5 +1,5 @@
 .footer {
-  background-color: #F4F5F8; /* Light grey-blue background to match the form design */
+  background-color: #F4F5F8;
   border-top: 1px solid #e2e8f0;
   padding-top: 4rem;
   color: var(--charcoal);
@@ -11,9 +11,13 @@
   margin: 0 auto;
   padding: 0 2rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 1.5fr; /* 3-column layout where the form is slightly wider */
+  grid-template-columns: 1fr 1fr 1.5fr; 
   gap: 3rem;
   margin-bottom: 3rem;
+}
+
+.footer__column:nth-child(2) {
+  padding-left: 1.5rem; 
 }
 
 .footer__title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
@@ -23,11 +27,29 @@
 .footer__contact-info p { margin-bottom: 0.75rem; font-size: 0.95rem; }
 .footer__contact-info a { color: var(--ignite-orange); text-decoration: none; font-weight: 600; }
 
+
+.footer__phone-group {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  margin-left: 0.35rem;
+}
+
+.footer__phone-group a {
+  white-space: nowrap;
+}
+
+.footer__phone-sep {
+  color: #4a5568;
+  font-weight: 400;
+}
+
 .footer__links { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
 .footer__links a { color: #4a5568; text-decoration: none; font-weight: 500; transition: color var(--transition-speed); }
 .footer__links a:hover { color: var(--ignite-orange); }
 
-/* --- Integrated Demo Form Styles --- */
+
 .footer__demo-title {
   font-size: 1.5rem;
   font-weight: 800;
@@ -52,13 +74,12 @@
   color: #1A202C;
   background-color: #FFFFFF;
   outline: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Added subtle shadow so it pops cleanly */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.2s;
 }
 
 .demo-input:focus,
 .demo-textarea:focus {
-  /* Replaced the orange glow with a crisp, neutral focus ring */
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -72,9 +93,7 @@
   resize: vertical;
 }
 
-/* Browsers force LTR rendering on type="tel" (and often type="email"/"number")
-   regardless of the page's dir attribute, since phone numbers are usually
-   written left-to-right. Override it so it follows the page direction. */
+
 [dir="rtl"] .demo-input[type="tel"] {
   text-align: right;
   direction: rtl;
@@ -114,7 +133,7 @@
 }
 
 .footer__socials a {
-  color: #1A202C; 
+  color: #1A202C;
   font-size: 1.5rem;
   transition: color 0.2s ease, transform 0.2s ease;
   display: flex;
@@ -122,22 +141,22 @@
 }
 
 .footer__socials a:hover {
-  color: #FF6A00; 
-  transform: translateY(-2px); 
+  color: #FF6A00;
+  transform: translateY(-2px);
 }
 
-/* =========================================
-   MOBILE RESPONSIVE UPDATES
-   ========================================= */
+
 @media (max-width: 768px) {
   .footer__container {
-    /* Switch from Grid to Flexbox on mobile so we can easily reorder items */
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
   }
 
-  /* This forces the form to jump to the very top of the flex container */
+  .footer__column:nth-child(2) {
+    padding-left: 0; 
+  }
+
   .demo-request-wrapper {
     order: -1;
   }

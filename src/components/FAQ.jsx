@@ -5,7 +5,6 @@ import './FAQ.css';
 
 const FAQ = () => {
   const { t } = useTranslation();
-  // Keeps the first question open by default
   const [openIndex, setOpenIndex] = useState(0); 
 
   const toggleFAQ = (index) => {
@@ -22,18 +21,17 @@ const FAQ = () => {
     <section className="faq-section" id="faq">
       <div className="faq-container">
         
-        {/* 1. Title fades and drops down */}
         <h2 className="faq-title" data-aos="fade-down">
           {t('faq.title')}
         </h2>
         
-        {/* 2. The entire FAQ card container slides up gracefully */}
         <div className="faq-card" data-aos="fade-up" data-aos-delay="150">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
+            const isLast = index === faqs.length - 1;
             
             return (
-              <div key={index} className="faq-item">
+              <div key={index} className={`faq-item ${isLast ? 'faq-item--last' : ''}`}>
                 <button 
                   className={`faq-question ${isOpen ? 'active' : ''}`} 
                   onClick={() => toggleFAQ(index)}
@@ -47,15 +45,17 @@ const FAQ = () => {
                     <p>{faq.answer}</p>
                   </div>
                 </div>
+
+                {isLast && (
+                  <div className="faq-contact-wrap">
+                    <Link to="/contact" className="btn btn--secondary faq-contact-btn">
+                      {t('faq.contact_btn')}
+                    </Link>
+                  </div>
+                )}
               </div>
             );
           })}
-
-          <div className="faq-footer">
-            <Link to="/contact" className="btn btn--secondary faq-contact-btn">
-              {t('faq.contact_btn')}
-            </Link>
-          </div>
         </div>
 
       </div>

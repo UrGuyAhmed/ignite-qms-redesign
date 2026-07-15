@@ -18,18 +18,29 @@ const Footer = () => {
           </p>
           <div className="footer__contact-info">
             <p><strong>{t('footer.address_label')}</strong> {t('footer.address_value')}</p>
+
             <p>
-              <strong>{t('footer.phone_label')}</strong>{' '}
-              <a href="tel:+213770615655">+213 770 615 655</a> / <a href="tel:+213770986528">+213 770 986 528</a>
+              <strong>{t('footer.phone_label')}</strong>
+              <span className="footer__phone-group">
+                <a href="tel:+213770615655">+213 770 615 655</a>
+                <span className="footer__phone-sep">/</span>
+                <a href="tel:+213770986528">+213 770 986 528</a>
+              </span>
             </p>
+
             <p>
-              <strong>{t('footer.address_setif_label', 'Sétif:')}</strong>{' '}
-              <a href="tel:+213770301294">+213 770 301 294</a> / <a href="tel:+213770261410">+213 770 261 410</a>
+              <strong>{t('footer.address_setif_label', 'Sétif:')}</strong>
+              <span className="footer__phone-group">
+                <a href="tel:+213770301294">+213 770 301 294</a>
+                <span className="footer__phone-sep">/</span>
+                <a href="tel:+213770261410">+213 770 261 410</a>
+              </span>
             </p>
+
             <p><strong>{t('footer.email_label')}</strong> <a href="mailto:info@igniteae.com">info@igniteae.com</a></p>
           </div>
           
-          {/* Social Media Links Added Here */}
+          {/* Social Media Links */}
           <div className="footer__socials">
             <a href="https://www.linkedin.com/company/68615549" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <FaLinkedin />
@@ -54,7 +65,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Column 3: Demandez une Démo Form - ADDED demo-request-wrapper HERE */}
+        {/* Column 3: Demandez une Démo Form */}
         <div className="footer__column demo-request-wrapper" data-aos="fade-up" data-aos-delay="300">
           <h4 className="footer__demo-title">{t('footer.demo_title')}</h4>
           
