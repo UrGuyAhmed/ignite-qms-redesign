@@ -10,7 +10,7 @@ const Footer = () => {
     <footer className="footer" id="contacts">
       <div className="footer__container">
         
-        {/* Column 1: Info (Fades up first) */}
+        
         <div className="footer__column" data-aos="fade-up">
           <h3 className="footer__title">Ignite <span className="highlight">QMS</span></h3>
           <p className="footer__desc">
@@ -40,7 +40,7 @@ const Footer = () => {
             <p><strong>{t('footer.email_label')}</strong> <a href="mailto:info@igniteae.com">info@igniteae.com</a></p>
           </div>
           
-          {/* Social Media Links */}
+          
           <div className="footer__socials">
             <a href="https://www.linkedin.com/company/68615549" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <FaLinkedin />
@@ -54,7 +54,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Column 2: Links (Fades up second with a 150ms delay) */}
+      
         <div className="footer__column" data-aos="fade-up" data-aos-delay="150">
           <h4 className="footer__subtitle">{t('footer.quick_links')}</h4>
           <ul className="footer__links">
@@ -65,7 +65,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Column 3: Demandez une Démo Form */}
+        
         <div className="footer__column demo-request-wrapper" data-aos="fade-up" data-aos-delay="300">
           <h4 className="footer__demo-title">{t('footer.demo_title')}</h4>
           
@@ -81,7 +81,7 @@ const Footer = () => {
 
       </div>
       
-      {/* Bottom Copyright (Fades in last) */}
+      
       <div className="footer__bottom" data-aos="fade-in" data-aos-delay="450">
         <p>© {new Date().getFullYear()} Ignite QMS. {t('footer.rights')}</p>
       </div>
